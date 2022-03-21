@@ -1,0 +1,99 @@
+<!-- We could also include Javascript 
+    for example in this document. -->
+
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+</script> -->
+
+<!-- maybe insert MathJax script here -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script> -->
+<script type="text/javascript">
+MathJax = {
+    loader: {load: ["input/tex", "output/HTML-CSS"]},
+    "HTML-CSS": {
+        // scale: 50,
+        minScaleAdjust: 10,
+        preferredFont: "TeX",
+        linebreaks: {
+            automatic: true,
+            width: "container"
+        },
+    },
+    displayAlign: "center",
+    styles: {
+        "@media print": {
+            "HTML-CSS": {
+                linebreaks: {
+                    automatic: true,
+                    width: "3.625in"
+                }
+            }
+        }
+    }
+};
+</script>
+
+
+<!-- ^ formatting | content v -->
+
+
+<!-- page numbers -->
+<script type="text/javascript">
+    // window.onload = addPageNumbers;
+    window.onbeforeprint = addPageNumbers;
+
+    function addPageNumbers() {
+        // A4 pageheight: 842px for 72dpi, 1123px for 96dpi
+        // letter pageheight: 791px for 72dpi, 1054px for 96dpi
+        // var totalPages = Math.ceil(document.body.scrollHeight / 1054)/2 - 1;
+        var totalPages = 5;
+        for (var i = 1; i <= totalPages; i++) {
+            var pageNumberDiv = document.createElement("div");
+            // var pageNumber = document.createTextNode("Page " + i + " of " + totalPages);
+            var pageNumber = document.createTextNode(i);
+            pageNumberDiv.style.position = "absolute";
+            //297mm A4 pageheight; 0,5px unknown needed necessary correction value; additional wanted 40px margin from bottom(own element height included)
+            // pageNumberDiv.style.top = "calc((" + i + " * (297mm - 0.5px)) - 40px)";
+            pageNumberDiv.style.top = "calc((" + i + " * (11in)) - (" + (i) + "* (" + Math.sqrt(2)/2 + "in - " + (1 - Math.sqrt(2)/2)/2 + "px) + 16px)";
+            pageNumberDiv.style.height = "16px";
+            pageNumberDiv.appendChild(pageNumber);
+            document.body.insertBefore(pageNumberDiv, document.getElementById("content"));
+            // pageNumberDiv.style.left = "calc(100% - (" + pageNumberDiv.offsetWidth + "px + 20px))";
+            pageNumberDiv.style.left = "calc(50% - (" + pageNumberDiv.offsetWidth + "px + 0px))";
+        }
+    }
+</script>
+
+<!-- header contents -->
+<div class="header-text">
+    <!-- https://leanpub.com/awesomeasciidoctornotebook/read#awesome-asciidoctor-adding-custom -->
+    <!-- We can use document attributes: -->
+    <!-- <p style="text-align:center">{page-number}</p>
+    <div style="text-align:right">&copy; 2019 by ASME</div> -->
+    <div style="text-align:right"></div>
+    <div style="text-align:right">ENGR 727-001: Advanced Mechanics of Materials</div>
+    <div style="text-align:right">Homework 4</div>
+    <div style="text-align:right">ENGR 727-001</div>
+    <div style="text-align:right">January 10-May 6, Lynchburg, VA, USA</div>
+    <div style="text-align:right"><br></div>
+    <div style="text-align:right", class="header-text-alt"><br>ENGR727-001</div>
+    <div style="text-align:right"><br><br></div>
+</div>
+
+<!-- contents for title, author(s), and affiliation(s) -->
+<div class="title-author-affil">
+    <!-- https://leanpub.com/awesomeasciidoctornotebook/read#awesome-asciidoctor-adding-custom -->
+    <!-- We can use document attributes: -->
+    <!-- <p style="text-align:center">{page-number}</p>
+    <div style="text-align:right">&copy; 2019 by ASME</div> -->
+    <div style="text-align:center", class="title">{doctitle}<br><br><br></div>
+    <div style="text-align:center", class="author">
+        <author>
+            <personname>
+            {authors}<br><br>
+            </personname>
+        </author>
+    </div>
+    <div style="text-align:center">{affiliation}<br><br></div>
+</div>

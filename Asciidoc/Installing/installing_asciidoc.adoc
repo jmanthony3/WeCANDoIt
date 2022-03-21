@@ -7,7 +7,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>
 :description: Short tutorial to install/use the AsciiDoc markup language.
 // :keywords: AsciiDoc, Ruby, Markup
 :imagesdir: ./installing_asciidoc
-// :bibtex-file: installing_asciidoc.bib
+:bibtex-file: installing_asciidoc.bib
 :toc: auto
 :xrefstyle: short
 :sectnums: |,all|
@@ -23,7 +23,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>
 // :docinfodir: ./
 :front-matter: any
 :!last-update-label:
-:source-highlighter: rouge
+// :source-highlighter: rouge
 
 // example variable
 // :fn-1: footnote:[]

@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="author" content="Joby M. Anthony III &lt;jmanthony1@liberty.edu&gt;">
+<title>ENGR 727-001 Advanced Mechanics of Materials: Homework 4</title>
+<style>
+/* @media screen {
+    @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+    @import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+} */
+
+/* define custom styles */
+body {
+    /* width: 90%; */
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-size: 10pt;
+    /* color: black; */
+}
+#header {
+    font-family: Arial;
+    font-style: normal;
+    font-size: 11pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: normal;
+    line-height-step: 12pt;
+}
+#author {
+    font-size: 10pt;
+    text-transform: capitalize;
+}
+.affiliations {
+    font-family: Arial;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: normal;
+    color: black;
+    text-align: center;
+}
+/* h1 {
+    font-size: 11pt;
+    text-align: center;
+    line-break: loose;
+} */
+#content {
+    /* column-count: 2;
+    column-gap: 0.25in;
+    column-width: calc(7.25/2)in;
+    column-fill: balance; */
+    orphans: 3;
+    display: flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/* .sect1, #preamble { */
+/* .sect1 {
+    column-count: 2;
+    column-fill: balance;
+    column-gap: 0.25in;
+    break-before: auto;
+    break-inside: avoid-column;
+    line-break: normal;
+} */
+.sect1+.sect1 {
+    border-top: none;
+}
+.sect2 {
+    break-before: auto;
+    break-inside: avoid;
+    break-inside: auto;
+}
+h2,h3,h4,h5 {
+    font-family: Arial;
+    /* font-style: normal; */
+    font-weight: bold;
+    /* color: black; */
+    text-transform: uppercase;
+    /* page-break-after: avoid; */
+    /* page-break-inside: avoid; */
+    break-before: avoid;
+    break-inside: avoid;
+
+}
+/* h1+p, h2+p, h3+p {
+    page-break-before: avoid;
+} */
+/* span#author.author{
+    text-align: center;
+} */
+/* h2 {
+    font-size: 10pt;
+    break-before: avoid;
+} */
+h3 {
+    /* font-size: 10pt; */
+    text-transform: capitalize;
+}
+p {
+    text-align: justify;
+    text-indent: 0.25in;
+    /* break-inside: auto; */
+}
+a {
+    color: blue;
+}
+/* table, figure {
+    break-inside: avoid;
+    break-inside: avoid-column;
+    break-inside: ;
+    page-break-inside: avoid;
+} */
+img {
+    width: 70.7%;
+    align-self: center;
+}
+.imageblock > .title {
+    font-size: 9pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.figgynumber {
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: bold;
+}
+.stemblock > .content {
+    font-family: "Cambria Math";
+    font-size: 12pt;
+    text-align: center;
+    line-break: auto;
+}
+/* header formatting */
+table {
+    width: 100%;
+}
+td {
+    vertical-align: top;
+}
+.d1 {
+    text-align: left;
+}
+.d2 {
+    text-align: center;
+}
+.d3 {
+    text-align: right;
+}
+.copy {
+    visibility: hidden;
+}
+.copy, .d3 {
+    white-space: nowrap;
+}
+.header-text {
+    /* margin-top: 0.5in;
+    margin-right: 0.5in; */
+    font-family: Arial;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: bold;
+    /* color: black; */
+}
+.header-text-alt {
+    /* margin-top: 0.5in;
+    margin-right: 0.5in; */
+    font-family: Arial;
+    font-style: normal;
+    font-size: 16pt;
+    font-weight: bold;
+    /* color: black; */
+}
+.title-author-affil {
+    font-family: Arial;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: normal;
+}
+.title {
+    font-size: 11pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.author {
+    font-size: 11pt;
+    font-weight: bold;
+}
+/* footer formatting */
+#footer-text {
+    width: 100%;
+    font-family: "Times New Roman";
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: normal;
+    display: table;
+}
+
+/* define custom format for media */
+@media print {
+    @page {
+        size: letter;
+        margin-top: 0.5in;
+        /* margin-bottom: 1in; */
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+    }
+    body {
+        width: 7.5in;
+        height: 9.5in;
+        /* size: letter; */
+        /* margin: 0.5in 1in 0.5in 0.5in; */
+        /* margin-top: 0.5in;
+        margin-bottom: 1in;
+        margin-left: 0.5in;
+        margin-right: 0.5in; */
+        /* font settings went here */
+        page-break-before: always;
+        page-break-inside: auto;
+        line-height: 12pt;
+        line-break: auto;
+        /* line-height-step: 12pt; */
+        /* column-count: 2;
+        column-fill: balance;
+        column-gap: 0.25in;
+        display: flexbox;
+        flex-direction: column; */
+        /* flex-flow: wrap; */
+        /* break-inside: avoid-column; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* flex-wrap: wrap; */
+        /* break-inside: avoid-column; */
+    }
+    #content {
+        /* width: 7.5in;
+        height: 9in; */
+        /* margin-top: 1in; */
+        /* margin-bottom: 2in; */
+        /* margin-left: 0.5in; */
+        /* margin-right: 0.5in; */
+        column-count: 2;
+        column-gap: 0.25in;
+        column-width: calc(7.25/2)in;
+        column-fill: balance;
+        /* orphans: 3;
+        display: flexbox;
+        flex-direction: column;
+        flex-wrap: wrap; */
+    }
+    img {
+        /* width: 70.7%;
+        align-items: center; */
+        break-inside: avoid;
+    }
+    .imageblock > .title {
+        /* font-size: 9pt;
+        text-transform: uppercase; */
+        break-inside: avoid;
+    }
+    .figgynumber {
+        /* font-family: Arial;
+        font-size: 10pt;
+        font-weight: bold; */
+        break-inside: avoid;
+    }
+    .stemblock > .content {
+        /* font-family: "Cambria Math";
+        font-size: 12pt;
+        text-align: center;
+        line-break: strict; */
+        break-inside: avoid;
+    }
+    #footer-text {
+        /* size: letter; */
+        width: 7.5in;
+        /* margin-top: 0.5in;
+        margin-bottom: 1in; */
+        /* margin-left: 0.5in;
+        margin-right: 0.5in; */
+        /* font-family: "Times New Roman";
+        font-style: normal;
+        font-size: 10pt;
+        font-weight: bold; */
+        position: fixed;
+        bottom: 0;
+        /* left: 50%; */
+    }
+}
+</style>
+<!-- We could also include Javascript
+    for example in this document. -->
+
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+</script> -->
+
+<!-- maybe insert MathJax script here -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script> -->
+<script type="text/javascript">
+MathJax = {
+    loader: {load: ["input/tex", "output/HTML-CSS"]},
+    "HTML-CSS": {
+        // scale: 50,
+        minScaleAdjust: 10,
+        preferredFont: "TeX",
+        linebreaks: {
+            automatic: true,
+            width: "container"
+        },
+    },
+    displayAlign: "center",
+    styles: {
+        "@media print": {
+            "HTML-CSS": {
+                linebreaks: {
+                    automatic: true,
+                    width: "3.625in"
+                }
+            }
+        }
+    }
+};
+</script>
+
+
+<!-- ^ formatting | content v -->
+
+
+<!-- page numbers -->
+<script type="text/javascript">
+    // window.onload = addPageNumbers;
+    window.onbeforeprint = addPageNumbers;
+
+    function addPageNumbers() {
+        // A4 pageheight: 842px for 72dpi, 1123px for 96dpi
+        // letter pageheight: 791px for 72dpi, 1054px for 96dpi
+        // var totalPages = Math.ceil(document.body.scrollHeight / 1054)/2 - 1;
+        var totalPages = 5;
+        for (var i = 1; i <= totalPages; i++) {
+            var pageNumberDiv = document.createElement("div");
+            // var pageNumber = document.createTextNode("Page " + i + " of " + totalPages);
+            var pageNumber = document.createTextNode(i);
+            pageNumberDiv.style.position = "absolute";
+            //297mm A4 pageheight; 0,5px unknown needed necessary correction value; additional wanted 40px margin from bottom(own element height included)
+            // pageNumberDiv.style.top = "calc((" + i + " * (297mm - 0.5px)) - 40px)";
+            pageNumberDiv.style.top = "calc((" + i + " * (11in)) - (" + (i) + "* (" + Math.sqrt(2)/2 + "in - " + (1 - Math.sqrt(2)/2)/2 + "px) + 16px)";
+            pageNumberDiv.style.height = "16px";
+            pageNumberDiv.appendChild(pageNumber);
+            document.body.insertBefore(pageNumberDiv, document.getElementById("content"));
+            // pageNumberDiv.style.left = "calc(100% - (" + pageNumberDiv.offsetWidth + "px + 20px))";
+            pageNumberDiv.style.left = "calc(50% - (" + pageNumberDiv.offsetWidth + "px + 0px))";
+        }
+    }
+</script>
+
+<!-- header contents -->
+<div class="header-text">
+    <!-- https://leanpub.com/awesomeasciidoctornotebook/read#awesome-asciidoctor-adding-custom -->
+    <!-- We can use document attributes: -->
+    <!-- <p style="text-align:center">{page-number}</p>
+    <div style="text-align:right">&copy; 2019 by ASME</div> -->
+    <div style="text-align:right"></div>
+    <div style="text-align:right">ENGR 727-001: Advanced Mechanics of Materials</div>
+    <div style="text-align:right">Homework 4</div>
+    <div style="text-align:right">ENGR 727-001</div>
+    <div style="text-align:right">January 10-May 6, Lynchburg, VA, USA</div>
+    <div style="text-align:right"><br></div>
+    <div style="text-align:right", class="header-text-alt"><br>ENGR727-001</div>
+    <div style="text-align:right"><br><br></div>
+</div>
+
+<!-- contents for title, author(s), and affiliation(s) -->
+<div class="title-author-affil">
+    <!-- https://leanpub.com/awesomeasciidoctornotebook/read#awesome-asciidoctor-adding-custom -->
+    <!-- We can use document attributes: -->
+    <!-- <p style="text-align:center">{page-number}</p>
+    <div style="text-align:right">&copy; 2019 by ASME</div> -->
+    <div style="text-align:center", class="title">ENGR 727-001 Advanced Mechanics of Materials: Homework 4<br><br><br></div>
+    <div style="text-align:center", class="author">
+        <author>
+            <personname>
+            Joby M. Anthony III &lt;jmanthony1@liberty.edu&gt;<br><br>
+            </personname>
+        </author>
+    </div>
+    <div style="text-align:center">PhD Student<br><br></div>
+</div>
+</head>
+<body class="article">
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Problems:</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; Problem 1</p>
+</li>
+<li>
+<p>&#10003; Problem 2</p>
+</li>
+<li>
+<p>&#10003; Problem 3</p>
+</li>
+<li>
+<p>&#10003; Problem 4</p>
+</li>
+<li>
+<p>&#10003; Problem 5</p>
+</li>
+<li>
+<p>&#10003; Problem 6</p>
+</li>
+<li>
+<p>&#10003; Problem 7</p>
+</li>
+<li>
+<p>&#10003; Problem 8</p>
+</li>
+<li>
+<p>&#10063; Problem 9</p>
+</li>
+<li>
+<p>&#10003; Problem 10</p>
+</li>
+<li>
+<p>&#10003; Problem 11</p>
+</li>
+<li>
+<p>&#10003; Problem 12</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-1">1. Problem 1</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A square, glass block in the side of a skyscraper is loaded so that the block is in a state of plane strain (\(\epsilon_{zx} = \epsilon_{zy} = \epsilon_{zz} = 0\)).
+(a) Determine the displacements for the block for the deformations shown and the strain components for the \(xy\)-coordinate axes.
+(b) Determine the strain components for the \(XY\)-axes.</p>
+</div>
+<div id="fig-1-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/1-problem_statement_220221_192020_EST.png" alt="1 problem statement 220221 192020 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 1-1. </span>Adapted from assignment instructions.</div>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>The displacement for the block are as shown in <a href="#fig-1-problem_statement">Fig. 1-1</a>.
+The strain components along the \(xy\)-axes can be found from building the strain state in matrix notation:</p>
+</div>
+<div id="eq-1-strain_state_form" class="stemblock">
+<div class="content">
+\[\begin{equation}
+[\epsilon] = \begin{bmatrix}\frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \\\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}\end{bmatrix}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Equations \(u(x, y)\) and \(v(x, y)\) can be found from solving a linear system of equations for which there are four equations and four unknowns:</p>
+</div>
+<div id="eq-1-equation_forms" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+u(x, y) &amp;:= \begin{bmatrix}1 &amp; x_{1} &amp; y_{1} &amp; xy_{1} \\1 &amp; x_{2} &amp; y_{2} &amp; xy_{2} \\1 &amp; x_{3} &amp; y_{3} &amp; xy_{3} \\1 &amp; x_{4} &amp; y_{4} &amp; xy_{4}\end{bmatrix}\begin{bmatrix}c_{1} \\c_{2} \\c_{3} \\c_{4}\end{bmatrix} &amp;= \begin{bmatrix}\delta_{x1} \\\delta_{x2} \\\delta_{x3} \\\delta_{x4}\end{bmatrix} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+d(x, y) &amp;:= \begin{bmatrix}1 &amp; x_{1} &amp; y_{1} &amp; xy_{1} \\1 &amp; x_{2} &amp; y_{2} &amp; xy_{2} \\1 &amp; x_{3} &amp; y_{3} &amp; xy_{3} \\1 &amp; x_{4} &amp; y_{4} &amp; xy_{4}\end{bmatrix}\begin{bmatrix}d_{1} \\d_{2} \\d_{3} \\d_{4}\end{bmatrix} &amp;= \begin{bmatrix}\delta_{y1} \\\delta_{y2} \\\delta_{y3} \\\delta_{y4}\end{bmatrix}
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Solving <a href="#eq-1-equation_forms">Eq. 1-2</a> with input data from the appropriate points lends to <a href="#eq-1-equations">Eq. 1-3</a>.</p>
+</div>
+<div id="eq-1-equations" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+u(x, y) &amp;= 6.50521303491303e-19*x*y - 0.002*x - 0.003*y + 2.83788857525759e-19 \\v(x, y) &amp;= -2.38524477946811e-18*x*y + 0.001*x + 0.0025*y + 3.78868401689226e-19
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>This means that <a href="#eq-1-strain_state_form">Eq. 1-1</a> can now be solved to reveal the strain state of the glass block: \([\epsilon_{xy}] = \begin{bmatrix}-2m &amp; -2m \\-2m &amp; 2.50m\end{bmatrix}\).</p>
+</div>
+<div class="paragraph">
+<p>To find the strain components projected onto the \(XY\)-axes, which is at some angle offset from the \(xy\)-axes, <a href="#eq-1-strain_offset">Eq. 1-4</a> must be implemented.</p>
+</div>
+<div id="eq-1-strain_offset" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\epsilon_{x'} &amp;= \epsilon_{x}\cos^{2}(\theta) + \epsilon_{y}\sin^{2}(\theta) + \gamma_{xy}\sin(\theta)\cos(\theta) \\\gamma_{x'y'} &amp;= -(\epsilon_{x} - \epsilon_{y})\sin(2\theta) + \gamma_{xy}\cos(2\theta)
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>, wherein \(\epsilon_{y'}\) can be found by replacing \(\theta\) with \(\theta + \frac{\pi}{2}\) in the equation for \(\epsilon_{x'}\).
+This yields \([\epsilon_{XY}] = \begin{bmatrix}-491.03u &amp; 2.90m \\-2.90m &amp; 991.03u\end{bmatrix}\)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-2">2. Problem 2</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A square plate, \(1~m\) on a long side, is loaded in a state of plane strain and is deformed as shown.
+(a) Write expressions for the \(u\) and \(v\) displacements for any point on the plate.
+(b) Determine the components of <strong>Green Strain</strong> in the plate.
+(c) Determine the total <strong>Green Strain</strong> at point \(B\) for a line element in the direction of line \(OB\).
+(d) For point \(B\), compare the components of strain from part (b) to the components of strain for <strong>Small-Displacement Theory</strong>.
+(e) Compare the strain determined in part (c) to the corresponding strain using <strong>Small-Displacement Theory</strong>.</p>
+</div>
+<div id="fig-2-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/2-problem_statement_220221_192420_EST.png" alt="2 problem statement 220221 192420 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 2-1. </span>Adapted from assignment instructions.</div>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>As demonstrated in <a href="#sec-1">Sec. 1</a>, expressions for displacement for any point on the plate may be found by solving <a href="#eq-1-equation_forms">Eq. 1-2</a>.
+This yields the following expressions:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+u(x, y) &amp;= -0.0375*x*y + 0.025*x - 1.38777878078145e-17*y + 1.00184002094058e-17 \\v(x, y) &amp;= -0.0125*x*y + 0.0125*x + 0.0125*y + 2.57711895321568e-18
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The strain state of the plate may be found by solving <a href="#eq-2-green_strain_form">Eq. 2-5</a> with the developed displacement equations.</p>
+</div>
+<div id="eq-2-green_strain_form" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\epsilon_{x} &amp;= \frac{\partial u}{\partial x} + \frac{1}{2}\Bigl[\Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2}\Bigr] \\\epsilon_{y} &amp;= \frac{\partial v}{\partial y} + \frac{1}{2}\Bigl[\Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2}\Bigr] \\\gamma_{xy} &amp;= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \frac{\partial u}{\partial x}\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}\frac{\partial v}{\partial y}
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The strain state, then, becomes: \(\epsilon_{Green} = \begin{bmatrix}-12.42m &amp; -13.70a \\\ -13.70a &amp; 12.58m\end{bmatrix}\).
+The percent error between \(\epsilon_{Green}\) and \(\epsilon_{Small} = \begin{bmatrix}-12.50m &amp; -13.88a \\\ -13.88a &amp; 12.50m\end{bmatrix}\) is \(0.0062~\%\).
+Projecting this strain state along the line \(OB\) can be found by the <em>direction of cosines</em> for this \(&lt;1, 1&gt;\) vector (\(l = 0.7071\) and \(m = 0.7071\)): \((\epsilon_{Green})_{OB} = \begin{bmatrix}-8.78m &amp; -9.69a \\\ -9.69a &amp; 8.89m\end{bmatrix}\).
+The percent error between \(\epsilon_{Small}\) and \((\epsilon_{Green})_{OB}\) is \(0.2876~\%\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-3">3. Problem 3</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.3 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.3</div>
+<p>A displacement field in a body is given by</p>
+</div>
+<div id="eq-3-problem_statement" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+u = c(x^{2} + 10), &amp;\quad v = 2cyz, &amp;\quad w = c(-xy + z^{2})
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(c = 10^{-4}\).
+Determine the state of strain on an element positioned at \((0, 2, 1)\).</p>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>The strain state can be found from determining the strain state at the point in the displacement field:</p>
+</div>
+<div id="eq-3-strain_state" class="stemblock">
+<div class="content">
+\[\begin{equation}
+[\epsilon] = \begin{bmatrix}\epsilon_{x} = \frac{\partial u}{\partial x} &amp; \gamma_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} &amp; \gamma_{xz} = \frac{\partial w}{\partial x} + \frac{\partial u}{\partial z} \\0 &amp; \epsilon_{y} = \frac{\partial v}{\partial y} &amp; \gamma_{yz} = \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y} \\0 &amp; 0 &amp; \epsilon_{z} = \frac{\partial w}{\partial z}\end{bmatrix}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>When <a href="#eq-3-problem_statement">Eq. 3-6</a> is plugged into <a href="#eq-3-strain_state">Eq. 3-7</a>, this takes the form</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[[\epsilon] = \begin{bmatrix}2x &amp; 0 &amp; -y \\0 &amp; 2z &amp; 2y - x \\0 &amp; 0 &amp; 2z\end{bmatrix}\times 10^{-4}\]
+</div>
+</div>
+<div class="paragraph">
+<p>which further yields <a href="#eq-5-strain_p">[eq-5-strain_p]</a> for \(\mathbf{\epsilon}(x = 0, y = 2, z = 1)\).</p>
+</div>
+<div id="eq-3-strain_p" class="stemblock">
+<div class="content">
+\[\begin{equation}
+[\epsilon] = \begin{bmatrix}2 &amp; 0 &amp; -1 \\0 &amp; 4 &amp; 1 \\0 &amp; 0 &amp; 4\end{bmatrix}\times 10^{-4}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Answer</div>
+<p>The strain tensor at point \((0, 2, 1)\), \(\epsilon = \begin{bmatrix}0 &amp; 0 &amp; -200u \\0 &amp; 200u &amp; 400u \\0 &amp; 0 &amp; 200u\end{bmatrix}\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-4">4. Problem 4</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.4 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.4</div>
+<p>The displacement field and strain distribution in a member have the form</p>
+</div>
+<div id="eq-4-problem_statement" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+u &amp;= a_{0}x^{2}y^{2} + a_{1}xy^{2} + a_{2}x^{2}y \\v &amp;= b_{0}x^{2}y + b_{1}xy \\\gamma_{xy} &amp;= c_{0}x^{2}y + c_{1}xy + c_{2}x^{2} + c_{3}y^{2}
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Which relationships connecting the constraints (\(a\)'s, \(b\)'s, and \(c\)'s) make the foregoing expressions (<a href="#eq-4-problem_statement">Eq. 4-9</a>) possible?</p>
+</div>
+<div class="paragraph">
+<div class="title">Answer</div>
+<p>These equations assume <em>plane-strain</em>; therefore, the constants can be found from the contribution of the respective derivatives of each displacement field equation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-5">5. Problem 5</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.9 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.9</div>
+<p>A \(100~mm\) by \(150~mm\) rectangular plate \(QABC\) is deformed into the shape shown by the dashed lines in <a href="#fig-5-problem_statement">Fig. 5-1</a>.
+All dimensions shown in the figure are in millimeters.
+Determine at point \(Q\) (a) the strain components \(\epsilon_{x}\), \(\epsilon_{y}\), and \(\gamma_{xy}\) and (b) the principal strains and the direction of the principal axes.</p>
+</div>
+<div id="fig-5-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/5-problem_statement_220221_194927_EST.png" alt="5 problem statement 220221 194927 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 5-1. </span>Adapted from [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>].</div>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>Following a procedure similar to that displayed in <a href="#sec-1">Sec. 1</a> yields the strain state: \(\begin{bmatrix}-12.50m &amp; -13.88a \\\ -13.88a &amp; 12.50m\end{bmatrix}\) which yields the principal strains: \(\epsilon_{1}, \epsilon_{2}, \epsilon_{3} = 12.50m, 12.50m, 0\) in the \(\theta_{p} = 277.56a~rad\) direction.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-6">6. Problem 6</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.12 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.12</div>
+<p>A thin, rectangular plate \(a = 20~mm \times b = 12~mm\) (<a href="#fig-6-problem_statement">Fig. 6-1</a>) is acted upon by a stress distribution resulting in the uniform strains \(\epsilon_{x} = 300\mu\), \(\epsilon_{y} = 500\mu\), and \(\gamma_{xy} = 200\mu\).
+Determine the changes in length of diagonals \(QB\) and \(AC\).</p>
+</div>
+<div id="fig-6-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/6-problem_statement_220221_195504_EST.png" alt="6 problem statement 220221 195504 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 6-1. </span>Adapted from [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>].</div>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>Because the plate undergoes a displacement that yields a symmetric strain state, the change in length for diagonals \(AC\) and \(QB\) are equal and found by finding the difference of the hypotenuse: e.g. \(a' = (1 + \epsilon_{x})a_{0} = 20.01\).
+Therefore, \(\Delta l_{AC} = 8.23m~m\) and \(\Delta l_{QB} = 8.23m~m\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-7">7. Problem 7</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.22 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.22</div>
+<p>Solve Problem 2.21 [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>] for a state of strain given by</p>
+</div>
+<div id="eq-7-problem_statement" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{bmatrix}400 &amp; 100 &amp; 0 \\100 &amp; 0 &amp; -200 \\0 &amp; -200 &amp; 600\end{bmatrix}~\mu
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Problem 2.21 asks to determine (a) the strain invariants; (b) the normal strain in the \(x'\) direction which is directed at an angle \(\theta = 30~^{\circ}\) from the \(x\)-axis; (c) the principal strains \(\epsilon_{1}\), \(\epsilon_{2}\), and \(\epsilon_{3}\); and, (d) the maximum shear strain.</p>
+</div>
+<div class="paragraph">
+<div class="title">Answers</div>
+<p>The strain invariants of given strain state (<a href="#eq-7-problem_statement">Eq. 7-10</a>):</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+J_{1} &amp;= p_{x} + p_{y} + p_{z} = 1m \\J_{2} &amp;= p_{x}p_{y} + p_{x}p_{z} + p_{y}p_{z} \\ &amp;\quad- p_{xy}^{2} - p_{yz}^{2} - p_{xz}^{2} \\J_{2} &amp;= 190n \\J_{3} &amp;= \|\mathbf{p}\| = 0.0
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The normal strain along \(x'\), which is \(\theta = 30~^{\circ}\) up from the \(x\)-axis, is \(\epsilon_{x'} = 556.21u\).</p>
+</div>
+<div class="paragraph">
+<p>The principal strains come from solving \(\epsilon_{p}^{3} - J_{1}\epsilon_{p}^{2} + J_{2}\epsilon_{p} - J_{3} = 0\):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\epsilon_{1} = 1.15m\)</p>
+</li>
+<li>
+<p>\(\epsilon_{2} = 231.47u\)</p>
+</li>
+<li>
+<p>\(\epsilon_{3} = 82.74u\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The maximum principal strain (magnitude and direction), \(\epsilon_{1} = 1.15m~\angle~-360.04y~rad\).
+The magnitude of the shear strain is the average of the principal strains (from <strong>Mohr&#8217;s Circle</strong>): \(\gamma_{max} = 82.74u\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-8">8. Problem 8</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.24 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.24</div>
+<p>At a point in a loaded frame, the strain with respect to the coordinate set \(xyz\) is</p>
+</div>
+<div id="eq-8-problem_statement" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{bmatrix}-300 &amp; -583 &amp; -300 \\-583 &amp; 200 &amp; -67 \\-300 &amp; -67 &amp; -200\end{bmatrix}~\mu
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Determine (a) the magnitudes and directions of the principal strains and (b) the maxmimum shear strains.</p>
+</div>
+<div class="paragraph">
+<div class="title">Answers</div>
+<p>The principal strains come from solving \(\epsilon_{p}^{3} - J_{1}\epsilon_{p}^{2} + J_{2}\epsilon_{p} - J_{3} = 0\):
+The strain invariants of given strain state (<a href="#eq-8-problem_statement">Eq. 8-11</a>):</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+J_{1} &amp;= p_{x} + p_{y} + p_{z} = -300u \\J_{2} &amp;= p_{x}p_{y} + p_{x}p_{z} + p_{y}p_{z} \\ &amp;\quad- p_{xy}^{2} - p_{yz}^{2} - p_{xz}^{2} \\J_{2} &amp;= -474.38n \\J_{3} &amp;= \|\mathbf{p}\| = 0.0
+\end{split}\]
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\epsilon_{1} = 710.18u\)</p>
+</li>
+<li>
+<p>\(\epsilon_{2} = 710.18u\)</p>
+</li>
+<li>
+<p>\(\epsilon_{3} = 79.09u\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The maximum principal strain (magnitude and direction), \(\epsilon_{1} = 710.18u~\angle~-1.30~rad\).
+The magnitude of the shear strain is the average of the principal strains (from <strong>Mohr&#8217;s Circle</strong>): \(\gamma_{max} = 79.09u\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-9">9. Problem 9</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.28 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.28</div>
+<p>A \(16~mm \times 16~mm\) square \(ABCD\) is sketched on a plate before loading.
+Subsequent to loading, the square becomes the rhombus illustrated in <a href="#fig-9-problem_statement">Fig. 9-1</a>.
+Determine the (a) modulus of elasticity, (b) Poisson&#8217;s Ratio, and (c) the shear modulus of elasticity.</p>
+</div>
+<div id="fig-9-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/9-problem_statement_220221_200917_EST.png" alt="9 problem statement 220221 200917 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 9-1. </span>Adapted from [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>].</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-10">10. Problem 10</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.52 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.52</div>
+<p>The distribution of stress in a structural member is given (in megapascals) by Eqs. (d) of Example 1.2 of Chapter 1 (<a href="#eq-10-problem_statement">Eq. 10-12</a>).
+Calculate the strains at the specified point \(Q(\frac{3}{4}, \frac{1}{4}, \frac{1}{2})\) for \(E = 200~GPa\) and \(\nu = 0.25\).</p>
+</div>
+<div id="eq-10-problem_statement" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\sigma_{x} = -x^{3} + y^{2}, &amp;\quad \tau_{xy} = 5z + 2y^{2} \\\sigma_{y} = 2x^{2} + \frac{1}{2}y^{2}, &amp;\quad \tau_{xz} = xz^{3} + x^{2}y \\\sigma_{z} = 4y^{2} - z^{3}, &amp;\quad \tau_{yz} = 0
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>The strain state can be found from determining the strain state at the point in the displacement field:</p>
+</div>
+<div id="eq-10-strain_state" class="stemblock">
+<div class="content">
+\[\begin{equation}
+[\epsilon] = \begin{bmatrix}\epsilon_{x} = \frac{1}{E}[\sigma_{x} - \nu(\sigma_{y} + \sigma_{z})] &amp; \gamma_{xy} = \frac{\tau_{xy}}{G} &amp; \gamma_{xz} = \frac{\tau_{xz}}{G} \\0 &amp; \epsilon_{y} = \frac{1}{E}[\sigma_{y} - \nu(\sigma_{x} + \sigma_{z})] &amp; \gamma_{yz} = \frac{\tau_{yz}}{G} \\0 &amp; 0 &amp; \epsilon_{z} = \frac{1}{E}[\sigma_{z} - \nu(\sigma_{x} + \sigma_{y})]\end{bmatrix}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>When <a href="#eq-10-problem_statement">Eq. 10-12</a> and point \(Q\) are plugged into <a href="#eq-10-strain_state">Eq. 10-13</a>, this yields <a href="#eq-5-strain_p">[eq-5-strain_p]</a> for \(\mathbf{\epsilon}(x = 0, y = 2, z = 1)\).</p>
+</div>
+<div id="eq-10-strain_p" class="stemblock">
+<div class="content">
+\[\begin{equation}
+[\epsilon] = \begin{bmatrix}-3.40u &amp; 32.81u &amp; 2.93u \\0 &amp; 6.07u &amp; 0 \\0 &amp; 0 &amp; -371.09n\end{bmatrix}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Answer</div>
+<p>The strain tensor at point \((0, 2, 1)\), \([\epsilon] = \begin{bmatrix}-3.40u &amp; 32.81u &amp; 2.93u \\0 &amp; 6.07u &amp; 0 \\0 &amp; 0 &amp; -371.09n\end{bmatrix}\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-11">11. Problem 11</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.53 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.53</div>
+<p>An aluminum alloy plate (\(E = 70~GPa\), \(\nu = \frac{1}{3}\)) of dimensions \(a = 300~mm\), \(b = 400~mm\), and thickness \(t = 10~mm\) is subjected to biaxial stresses as shown in <a href="#fig-11-problem_statement">Fig. 11-1</a>.
+Calculate the change in (a) the length \(AB\) and (b) the volume of the plate.</p>
+</div>
+<div id="fig-11-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/11-problem_statement_220221_201834_EST.png" alt="11 problem statement 220221 201834 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 11-1. </span>Adapted from [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>].</div>
+</div>
+<div id="eq-11-strain_state_form" class="stemblock">
+<div class="title">Solution</div>
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\epsilon_{x} &amp;= \frac{\sigma_{x}}{E} - \nu\frac{\sigma_{y}}{E} \\\epsilon_{y} &amp;= \frac{\sigma_{y}}{E} - \nu\frac{\sigma_{x}}{E} \\\gamma_{xy} &amp;= \frac{\tau_{xy}}{G}
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Using the provided stress tensor, the strain state may be found by solving <a href="#eq-11-strain_state_form">Eq. 11-15</a> which yields: \([\epsilon] = \begin{bmatrix}0 &amp; -428.57u \\\ -142.86u &amp; 1.14m\end{bmatrix}\).
+Therefore, \(\Delta b = \epsilon_{y}b = 457.14m~mm\) and \(\Delta V = (\epsilon_{x} + \epsilon_{y})V_{0} = 685.71~mm^{3}\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-12">12. Problem 12</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Solve Problem 2.54 from the textbook.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Problem Statement
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Problem 2.54</div>
+<p>The steel, rectangular parallelepiped (\(E = 200~GPa\) and \(\nu = 0.3\)) shown in <a href="#fig-12-problem_statement">Fig. 12-1</a> has dimensions \(a = 250~mm\), \(b = 200~mm\), and \(c = 150~mm\).
+It is subjected to triaxial stresses \(\sigma_{x} = -60~MPa\), \(\sigma_{y} = -50~MPa\), and \(\sigma_{z} = -40~MPa\) acting on the \(x\), \(y\), and \(z\) faces.
+Determine (a) the changes \(\Delta a\), \(\Delta b\), and \(\Delta c\) in the dimensions of the block, and (b) the change \(\Delta V\) in the volume.</p>
+</div>
+<div id="fig-12-problem_statement" class="imageblock">
+<div class="content">
+<img src="./ENGR727_Homework4_JobyAnthonyIII/12-problem_statement_220221_202215_EST.png" alt="12 problem statement 220221 202215 EST">
+</div>
+<div class="title"><span class="figgynumber">Figure 12-1. </span>Adapted from [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>].</div>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>Following a similar procedure as in <a href="#sec-11">Sec. 11</a>, the changes in length for each side and the final volume of the parallelepiped are: \(\Delta a = 0.006~mm\), \(\Delta b = 0.04~mm\), \(\Delta c = 0.069~mm\), and \(V_{f} = [1 + (\epsilon_{x} - 2\nu\epsilon_{x})]dxdydz = V_{0} + \Delta V = -2.25k~mm^{3}\).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliography">Bibliography</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a id="uguralAdvancedMechanicsMaterials2019"></a>[1] A. Ugural and S. Fenster, <em>Advanced Mechanics of Materials and Applied Elasticity (International Series in the Physical and Chemical Engineering Sciences)</em>, Sixth. Pearson, 2019.</p>
+</div>
+</div>
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<div id="footer-text">
+    <!-- https://leanpub.com/awesomeasciidoctornotebook/read#awesome-asciidoctor-adding-custom -->
+    <!-- We can use document attributes: -->
+    <!-- <p style="text-align:center">{page-number}</p>
+    <div style="text-align:right">&copy; 2019 by ASME</div> -->
+    <table>
+        <tr>
+            <td class="d1">
+                <!-- left -->
+                <div class="copy">&copy; 2019 by ASME</div>
+            </td>
+            <td class="d2">
+                <!-- center text that is long enough to force a word wrap! -->
+                <!-- <div id="pageFooter"></div> -->
+            </td>
+            <!-- <td class="d3">right text</td> -->
+            <td class="d3">
+                &copy; 2019 by ASME
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

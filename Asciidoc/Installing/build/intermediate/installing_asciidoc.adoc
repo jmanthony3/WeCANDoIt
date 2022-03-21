@@ -1,0 +1,108 @@
+// document metadata
+= Installation Instructions for AsciiDoc
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:affiliation: PhD Student
+:document_version: 1.0
+:revdate: March 14, 2022
+:description: Short tutorial to install/use the AsciiDoc markup language.
+// :keywords: AsciiDoc, Ruby, Markup
+:imagesdir: ./installing_asciidoc
+:bibtex-file: installing_asciidoc.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesdir: ./
+// :stylesheet: asme.css
+// :noheader:
+// :nofooter:
+// :docinfo: private
+// :docinfodir: ./
+:front-matter: any
+:!last-update-label:
+// :source-highlighter: rouge
+
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+<%!
+    from engineering_notation import EngNumber as engr
+    import numpy as np
+%>
+// end document metadata
+
+
+
+
+
+// begin document
+// [abstract]
+// .Abstract
+
+// *Keywords:* _{keywords}_
+
+
+
+[#sec-requirements, {counter:secs}, {counter:subs}, {counter:figs}]
+== Software Requirements and Installation Links to Executables/Binaries
+:subs: 0
+:figs: 0
+
+To write https://asciidoctor.org/[AsciiDoc] markup documents and compile to other formats cite:[AsciidoctorFastOpen], be able to run the https://www.ruby-lang.org/en/[Ruby language] cite:[RubyProgrammingLanguage].
+Refer to https://asciidoctor.org/[official AsciiDoc installation instructions] cite:[AsciidoctorFastOpen] for local machine setup.
+
+
+
+[#sec-gems, {counter:secs}, {counter:subs}, {counter:figs}]
+== Installing Gems
+:subs: 0
+:figs: 0
+
+
+[#sec-gems-required, {counter:subs}]
+=== Required
+* `gem install asciidoctor` cite:[AsciidoctorFastOpen]
+
+
+[#sec-gems-recommended, {counter:subs}]
+=== Recommended
+.Syntax Highlighting cite:[AsciidoctorPDFAsciidoctor]
+* `gem install rouge`
+* `gem install pygments.rb`
+* `gem install coderay`
+
+Set the appropriate variable (example): `:source-highlighter: rouge`
+
+.PDF Output cite:[AsciidoctorPDFAsciidoctor]
+* `gem install asciidoctor-pdf`
+
+.LaTeX Support for Typesetting Mathematics cite:[AsciidoctorLaTeX2022]
+* `gem install asciidoctor-latex --pre`
+
+.BibTeX Files and Citations cite:[AsciidoctorbibtexBibtexIntegration2022]
+* `gem install asciidoctor-bibtex`
+
+.AsciiDoxy cite:[Installation]
+* `pip3 install --update asciidoxy`
+
+
+
+// [appendix#sec-appendix-Figures]
+// == Figures
+
+
+
+[bibliography]
+== Bibliography
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks

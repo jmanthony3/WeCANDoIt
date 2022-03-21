@@ -1,0 +1,515 @@
+// document metadata
+= ENGR 727-001 Advanced Mechanics of Materials: Homework 4
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:affiliation: PhD Student
+:document_version: 1.0
+:revdate: February 16, 2022
+// :description: 
+// :keywords: 
+:imagesdir: ./ENGR727_Homework4_JobyAnthonyIII
+:bibtex-file: ENGR727_Homework4_JobyAnthonyIII.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Testing/ENGR527-727 HW4
+:stylesheet: asme.css
+:noheader:
+:nofooter:
+:docinfo: private
+:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Testing/ENGR527-727 HW4
+:front-matter: any
+:!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+
+// end document metadata
+
+
+
+
+
+// begin document
+// [abstract]
+// .Abstract
+
+// // *Keywords:* _{keywords}_
+
+Problems:
+
+* [x] Problem 1
+* [x] Problem 2
+* [x] Problem 3
+* [x] Problem 4
+* [x] Problem 5
+* [x] Problem 6
+* [x] Problem 7
+* [x] Problem 8
+* [ ] Problem 9
+* [x] Problem 10
+* [x] Problem 11
+* [x] Problem 12
+
+
+
+[#sec-1, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 1
+:subs: 0
+:figs: 0
+
+> A square, glass block in the side of a skyscraper is loaded so that the block is in a state of plane strain (stem:[\epsilon_{zx} = \epsilon_{zy} = \epsilon_{zz} = 0]).
+> (a) Determine the displacements for the block for the deformations shown and the strain components for the stem:[xy]-coordinate axes.
+> (b) Determine the strain components for the stem:[XY]-axes.
+> [#fig-1-problem_statement]
+> .Adapted from assignment instructions.
+> image::./1-problem_statement_220221_192020_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+> -- Problem Statement
+
+.Solution
+// solution codes
+
+
+The displacement for the block are as shown in xref:fig-1-problem_statement[].
+The strain components along the stem:[xy]-axes can be found from building the strain state in matrix notation:
+[stem#eq-1-strain_state_form, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+[\epsilon] = \begin{bmatrix}\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \\\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}\end{bmatrix}
+\end{equation}
+++++
+Equations stem:[u(x, y)] and stem:[v(x, y)] can be found from solving a linear system of equations for which there are four equations and four unknowns:
+
+[stem#eq-1-equation_forms, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+u(x, y) &:= \begin{bmatrix}1 & x_{1} & y_{1} & xy_{1} \\1 & x_{2} & y_{2} & xy_{2} \\1 & x_{3} & y_{3} & xy_{3} \\1 & x_{4} & y_{4} & xy_{4}\end{bmatrix}\begin{bmatrix}c_{1} \\c_{2} \\c_{3} \\c_{4}\end{bmatrix} &= \begin{bmatrix}\delta_{x1} \\\delta_{x2} \\\delta_{x3} \\\delta_{x4}\end{bmatrix} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+d(x, y) &:= \begin{bmatrix}1 & x_{1} & y_{1} & xy_{1} \\1 & x_{2} & y_{2} & xy_{2} \\1 & x_{3} & y_{3} & xy_{3} \\1 & x_{4} & y_{4} & xy_{4}\end{bmatrix}\begin{bmatrix}d_{1} \\d_{2} \\d_{3} \\d_{4}\end{bmatrix} &= \begin{bmatrix}\delta_{y1} \\\delta_{y2} \\\delta_{y3} \\\delta_{y4}\end{bmatrix}
+\end{split}
+\end{equation}
+++++
+
+Solving xref:eq-1-equation_forms[] with input data from the appropriate points lends to xref:eq-1-equations[].
+[stem#eq-1-equations, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+u(x, y) &= 6.50521303491303e-19*x*y - 0.002*x - 0.003*y + 2.83788857525759e-19 \\v(x, y) &= -2.38524477946811e-18*x*y + 0.001*x + 0.0025*y + 3.78868401689226e-19
+\end{split}
+\end{equation}
+++++
+This means that xref:eq-1-strain_state_form[] can now be solved to reveal the strain state of the glass block: stem:[[\epsilon_{xy}\] = \begin{bmatrix}-2m & -2m \\-2m & 2.50m\end{bmatrix}].
+
+To find the strain components projected onto the stem:[XY]-axes, which is at some angle offset from the stem:[xy]-axes, xref:eq-1-strain_offset[] must be implemented.
+[stem#eq-1-strain_offset, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\epsilon_{x'} &= \epsilon_{x}\cos^{2}(\theta) + \epsilon_{y}\sin^{2}(\theta) + \gamma_{xy}\sin(\theta)\cos(\theta) \\\gamma_{x'y'} &= -(\epsilon_{x} - \epsilon_{y})\sin(2\theta) + \gamma_{xy}\cos(2\theta)
+\end{split}
+\end{equation}
+++++
+, wherein stem:[\epsilon_{y'}] can be found by replacing stem:[\theta] with stem:[\theta + \frac{\pi}{2}] in the equation for stem:[\epsilon_{x'}].
+This yields stem:[[\epsilon_{XY}\] = \begin{bmatrix}-491.03u & 2.90m \\-2.90m & 991.03u\end{bmatrix}]
+
+
+
+[#sec-2, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 2
+:subs: 0
+:figs: 0
+
+> A square plate, stem:[1~m] on a long side, is loaded in a state of plane strain and is deformed as shown.
+> (a) Write expressions for the stem:[u] and stem:[v] displacements for any point on the plate.
+> (b) Determine the components of *Green Strain* in the plate.
+> (c) Determine the total *Green Strain* at point stem:[B] for a line element in the direction of line stem:[OB].
+> (d) For point stem:[B], compare the components of strain from part (b) to the components of strain for *Small-Displacement Theory*.
+> (e) Compare the strain determined in part (c) to the corresponding strain using *Small-Displacement Theory*.
+> [#fig-2-problem_statement]
+> .Adapted from assignment instructions.
+> image::./2-problem_statement_220221_192420_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+> -- Problem Statement
+
+.Solution
+// solution codes
+
+
+As demonstrated in xref:sec-1[], expressions for displacement for any point on the plate may be found by solving xref:eq-1-equation_forms[].
+This yields the following expressions:
+[stem]
+++++
+\begin{split}
+u(x, y) &= -0.0375*x*y + 0.025*x - 1.38777878078145e-17*y + 1.00184002094058e-17 \\v(x, y) &= -0.0125*x*y + 0.0125*x + 0.0125*y + 2.57711895321568e-18
+\end{split}
+++++
+The strain state of the plate may be found by solving xref:eq-2-green_strain_form[] with the developed displacement equations.
+[stem#eq-2-green_strain_form, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} + \frac{1}{2}\Bigl[\Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2}\Bigr] \\\epsilon_{y} &= \frac{\partial v}{\partial y} + \frac{1}{2}\Bigl[\Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2}\Bigr] \\\gamma_{xy} &= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \frac{\partial u}{\partial x}\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}\frac{\partial v}{\partial y}
+\end{split}
+\end{equation}
+++++
+The strain state, then, becomes: stem:[\epsilon_{Green} = \begin{bmatrix}-12.42m & -13.70a \\\ -13.70a & 12.58m\end{bmatrix}].
+The percent error between stem:[\epsilon_{Green}] and stem:[\epsilon_{Small} = \begin{bmatrix}-12.50m & -13.88a \\\ -13.88a & 12.50m\end{bmatrix}] is stem:[0.0062~\%].
+Projecting this strain state along the line stem:[OB] can be found by the _direction of cosines_ for this stem:[<1, 1>] vector (stem:[l = 0.7071] and stem:[m = 0.7071]): stem:[(\epsilon_{Green})_{OB} = \begin{bmatrix}-8.78m & -9.69a \\\ -9.69a & 8.89m\end{bmatrix}].
+The percent error between stem:[\epsilon_{Small}] and stem:[(\epsilon_{Green})_{OB}] is stem:[0.2876~\%].
+
+
+
+[#sec-3, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 3
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.3 from the textbook.
+> -- Problem Statement
+
+.Problem 2.3
+A displacement field in a body is given by
+[stem#eq-3-problem_statement, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+u = c(x^{2} + 10), &\quad v = 2cyz, &\quad w = c(-xy + z^{2})
+\end{split}
+\end{equation}
+++++
+where stem:[c = 10^{-4}].
+Determine the state of strain on an element positioned at stem:[(0, 2, 1)].
+
+.Solution
+// solution codes
+
+
+The strain state can be found from determining the strain state at the point in the displacement field:
+[stem#eq-3-strain_state, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+[\epsilon] = \begin{bmatrix}\epsilon_{x} = \frac{\partial u}{\partial x} & \gamma_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} & \gamma_{xz} = \frac{\partial w}{\partial x} + \frac{\partial u}{\partial z} \\0 & \epsilon_{y} = \frac{\partial v}{\partial y} & \gamma_{yz} = \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y} \\0 & 0 & \epsilon_{z} = \frac{\partial w}{\partial z}\end{bmatrix}
+\end{equation}
+++++
+When xref:eq-3-problem_statement[] is plugged into xref:eq-3-strain_state[], this takes the form
+[stem]
+++++
+[\epsilon] = \begin{bmatrix}2x & 0 & -y \\0 & 2z & 2y - x \\0 & 0 & 2z\end{bmatrix}\times 10^{-4}
+++++
+which further yields xref:eq-5-strain_p[] for stem:[\mathbf{\epsilon}(x = 0, y = 2, z = 1)].
+[stem#eq-3-strain_p, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+[\epsilon] = \begin{bmatrix}2 & 0 & -1 \\0 & 4 & 1 \\0 & 0 & 4\end{bmatrix}\times 10^{-4}
+\end{equation}
+++++
+
+.Answer
+The strain tensor at point stem:[(0, 2, 1)], stem:[\epsilon = \begin{bmatrix}0 & 0 & -200u \\0 & 200u & 400u \\0 & 0 & 200u\end{bmatrix}].
+
+
+
+[#sec-4, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 4
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.4 from the textbook.
+> -- Problem Statement
+
+.Problem 2.4
+The displacement field and strain distribution in a member have the form
+[stem#eq-4-problem_statement, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+u &= a_{0}x^{2}y^{2} + a_{1}xy^{2} + a_{2}x^{2}y \\v &= b_{0}x^{2}y + b_{1}xy \\\gamma_{xy} &= c_{0}x^{2}y + c_{1}xy + c_{2}x^{2} + c_{3}y^{2}
+\end{split}
+\end{equation}
+++++
+Which relationships connecting the constraints (stem:[a]'s, stem:[b]'s, and stem:[c]'s) make the foregoing expressions (xref:eq-4-problem_statement[]) possible?
+
+.Answer
+These equations assume _plane-strain_; therefore, the constants can be found from the contribution of the respective derivatives of each displacement field equation.
+
+
+
+[#sec-5, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 5
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.9 from the textbook.
+> -- Problem Statement
+
+.Problem 2.9
+A stem:[100~mm] by stem:[150~mm] rectangular plate stem:[QABC] is deformed into the shape shown by the dashed lines in xref:fig-5-problem_statement[].
+All dimensions shown in the figure are in millimeters.
+Determine at point stem:[Q] (a) the strain components stem:[\epsilon_{x}], stem:[\epsilon_{y}], and stem:[\gamma_{xy}] and (b) the principal strains and the direction of the principal axes.
+[#fig-5-problem_statement]
+.Adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+image::./5-problem_statement_220221_194927_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+.Solution
+// solution codes
+
+
+Following a procedure similar to that displayed in xref:sec-1[] yields the strain state: stem:[\begin{bmatrix}-12.50m & -13.88a \\\ -13.88a & 12.50m\end{bmatrix}] which yields the principal strains: stem:[\epsilon_{1}, \epsilon_{2}, \epsilon_{3} = 12.50m, 12.50m, 0] in the stem:[\theta_{p} = 277.56a~rad] direction.
+
+
+
+[#sec-6, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 6
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.12 from the textbook.
+> -- Problem Statement
+
+.Problem 2.12
+A thin, rectangular plate stem:[a = 20~mm \times b = 12~mm] (xref:fig-6-problem_statement[]) is acted upon by a stress distribution resulting in the uniform strains stem:[\epsilon_{x} = 300\mu], stem:[\epsilon_{y} = 500\mu], and stem:[\gamma_{xy} = 200\mu].
+Determine the changes in length of diagonals stem:[QB] and stem:[AC].
+[#fig-6-problem_statement]
+.Adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+image::./6-problem_statement_220221_195504_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+.Solution
+// solution codes
+
+
+Because the plate undergoes a displacement that yields a symmetric strain state, the change in length for diagonals stem:[AC] and stem:[QB] are equal and found by finding the difference of the hypotenuse: e.g. stem:[a' = (1 + \epsilon_{x})a_{0} = 20.01].
+Therefore, stem:[\Delta l_{AC} = 8.23m~m] and stem:[\Delta l_{QB} = 8.23m~m].
+
+
+
+[#sec-7, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 7
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.22 from the textbook.
+> -- Problem Statement
+
+.Problem 2.22
+Solve Problem 2.21 cite:[uguralAdvancedMechanicsMaterials2019] for a state of strain given by
+[stem#eq-7-problem_statement, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{bmatrix}400 & 100 & 0 \\100 & 0 & -200 \\0 & -200 & 600\end{bmatrix}~\mu
+\end{equation}
+++++
+Problem 2.21 asks to determine (a) the strain invariants; (b) the normal strain in the stem:[x'] direction which is directed at an angle stem:[\theta = 30~^{\circ}] from the stem:[x]-axis; (c) the principal strains stem:[\epsilon_{1}], stem:[\epsilon_{2}], and stem:[\epsilon_{3}]; and, (d) the maximum shear strain.
+
+.Solution
+// solution codes
+
+// i_2a, j_2a, k_2a = 2, 1, 2
+// ijk_2a = np.array([i_2a, j_2a, k_2a])
+// eps_7a = s_2(eps_7, ijk_2a)
+// dem_2a = np.sqrt(np.sum(np.power(ijk_2a, 2)))
+// dc_2a = l_2a, m_2a, n_2a = ijk_2a/dem_2a
+// s_2a = s_2(eps_7a, dc_2a)
+// t_2a = t_2(np.linalg.norm(eps_7a), s_2a)
+
+
+.Answers
+The strain invariants of given strain state (xref:eq-7-problem_statement[]):
+[stem]
+++++
+\begin{split}
+J_{1} &= p_{x} + p_{y} + p_{z} = 1m \\J_{2} &= p_{x}p_{y} + p_{x}p_{z} + p_{y}p_{z} \\ &\quad- p_{xy}^{2} - p_{yz}^{2} - p_{xz}^{2} \\J_{2} &= 190n \\J_{3} &= \|\mathbf{p}\| = 0.0
+\end{split}
+++++
+
+The normal strain along stem:[x'], which is stem:[\theta = 30~^{\circ}] up from the stem:[x]-axis, is stem:[\epsilon_{x'} = 556.21u].
+
+The principal strains come from solving stem:[\epsilon_{p}^{3} - J_{1}\epsilon_{p}^{2} + J_{2}\epsilon_{p} - J_{3} = 0]:
+
+* stem:[\epsilon_{1} = 1.15m]
+* stem:[\epsilon_{2} = 231.47u]
+* stem:[\epsilon_{3} = 82.74u]
+
+The maximum principal strain (magnitude and direction), stem:[\epsilon_{1} = 1.15m~\angle~-360.04y~rad].
+The magnitude of the shear strain is the average of the principal strains (from *Mohr's Circle*): stem:[\gamma_{max} = 82.74u].
+
+
+
+[#sec-8, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 8
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.24 from the textbook.
+> -- Problem Statement
+
+.Problem 2.24
+At a point in a loaded frame, the strain with respect to the coordinate set stem:[xyz] is
+[stem#eq-8-problem_statement, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{bmatrix}-300 & -583 & -300 \\-583 & 200 & -67 \\-300 & -67 & -200\end{bmatrix}~\mu
+\end{equation}
+++++
+Determine (a) the magnitudes and directions of the principal strains and (b) the maxmimum shear strains.
+
+.Solution
+// solution codes
+
+
+.Answers
+The principal strains come from solving stem:[\epsilon_{p}^{3} - J_{1}\epsilon_{p}^{2} + J_{2}\epsilon_{p} - J_{3} = 0]:
+The strain invariants of given strain state (xref:eq-8-problem_statement[]):
+[stem]
+++++
+\begin{split}
+J_{1} &= p_{x} + p_{y} + p_{z} = -300u \\J_{2} &= p_{x}p_{y} + p_{x}p_{z} + p_{y}p_{z} \\ &\quad- p_{xy}^{2} - p_{yz}^{2} - p_{xz}^{2} \\J_{2} &= -474.38n \\J_{3} &= \|\mathbf{p}\| = 0.0
+\end{split}
+++++
+
+* stem:[\epsilon_{1} = 710.18u]
+* stem:[\epsilon_{2} = 710.18u]
+* stem:[\epsilon_{3} = 79.09u]
+
+The maximum principal strain (magnitude and direction), stem:[\epsilon_{1} = 710.18u~\angle~-1.30~rad].
+The magnitude of the shear strain is the average of the principal strains (from *Mohr's Circle*): stem:[\gamma_{max} = 79.09u].
+
+
+
+[#sec-9, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 9
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.28 from the textbook.
+> -- Problem Statement
+
+.Problem 2.28
+A stem:[16~mm \times 16~mm] square stem:[ABCD] is sketched on a plate before loading.
+Subsequent to loading, the square becomes the rhombus illustrated in xref:fig-9-problem_statement[].
+Determine the (a) modulus of elasticity, (b) Poisson's Ratio, and (c) the shear modulus of elasticity.
+[#fig-9-problem_statement]
+.Adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+image::./9-problem_statement_220221_200917_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+
+
+[#sec-10, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 10
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.52 from the textbook.
+> -- Problem Statement
+
+.Problem 2.52
+The distribution of stress in a structural member is given (in megapascals) by Eqs. (d) of Example 1.2 of Chapter 1 (xref:eq-10-problem_statement[]).
+Calculate the strains at the specified point stem:[Q(\frac{3}{4}, \frac{1}{4}, \frac{1}{2})] for stem:[E = 200~GPa] and stem:[\nu = 0.25].
+[stem#eq-10-problem_statement, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\sigma_{x} = -x^{3} + y^{2}, &\quad \tau_{xy} = 5z + 2y^{2} \\\sigma_{y} = 2x^{2} + \frac{1}{2}y^{2}, &\quad \tau_{xz} = xz^{3} + x^{2}y \\\sigma_{z} = 4y^{2} - z^{3}, &\quad \tau_{yz} = 0
+\end{split}
+\end{equation}
+++++
+
+.Solution
+// solution codes
+
+
+The strain state can be found from determining the strain state at the point in the displacement field:
+[stem#eq-10-strain_state, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+[\epsilon] = \begin{bmatrix}\epsilon_{x} = \frac{1}{E}[\sigma_{x} - \nu(\sigma_{y} + \sigma_{z})] & \gamma_{xy} = \frac{\tau_{xy}}{G} & \gamma_{xz} = \frac{\tau_{xz}}{G} \\0 & \epsilon_{y} = \frac{1}{E}[\sigma_{y} - \nu(\sigma_{x} + \sigma_{z})] & \gamma_{yz} = \frac{\tau_{yz}}{G} \\0 & 0 & \epsilon_{z} = \frac{1}{E}[\sigma_{z} - \nu(\sigma_{x} + \sigma_{y})]\end{bmatrix}
+\end{equation}
+++++
+When xref:eq-10-problem_statement[] and point stem:[Q] are plugged into xref:eq-10-strain_state[], this yields xref:eq-5-strain_p[] for stem:[\mathbf{\epsilon}(x = 0, y = 2, z = 1)].
+[stem#eq-10-strain_p, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+[\epsilon] = \begin{bmatrix}-3.40u & 32.81u & 2.93u \\0 & 6.07u & 0 \\0 & 0 & -371.09n\end{bmatrix}
+\end{equation}
+++++
+
+.Answer
+The strain tensor at point stem:[(0, 2, 1)], stem:[[\epsilon\] = \begin{bmatrix}-3.40u & 32.81u & 2.93u \\0 & 6.07u & 0 \\0 & 0 & -371.09n\end{bmatrix}].
+
+
+
+[#sec-11, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 11
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.53 from the textbook.
+> -- Problem Statement
+
+.Problem 2.53
+An aluminum alloy plate (stem:[E = 70~GPa], stem:[\nu = \frac{1}{3}]) of dimensions stem:[a = 300~mm], stem:[b = 400~mm], and thickness stem:[t = 10~mm] is subjected to biaxial stresses as shown in xref:fig-11-problem_statement[].
+Calculate the change in (a) the length stem:[AB] and (b) the volume of the plate.
+[#fig-11-problem_statement]
+.Adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+image::./11-problem_statement_220221_201834_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+.Solution
+// solution codes
+
+
+[stem#eq-11-strain_state_form, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\epsilon_{x} &= \frac{\sigma_{x}}{E} - \nu\frac{\sigma_{y}}{E} \\\epsilon_{y} &= \frac{\sigma_{y}}{E} - \nu\frac{\sigma_{x}}{E} \\\gamma_{xy} &= \frac{\tau_{xy}}{G}
+\end{split}
+\end{equation}
+++++
+Using the provided stress tensor, the strain state may be found by solving xref:eq-11-strain_state_form[] which yields: stem:[[\epsilon\] = \begin{bmatrix}0 & -428.57u \\\ -142.86u & 1.14m\end{bmatrix}].
+Therefore, stem:[\Delta b = \epsilon_{y}b = 457.14m~mm] and stem:[\Delta V = (\epsilon_{x} + \epsilon_{y})V_{0} = 685.71~mm^{3}].
+
+
+
+[#sec-12, {counter:secs}, {counter:subs},{counter:figs}]
+== Problem 12
+:subs: 0
+:figs: 0
+
+> Solve Problem 2.54 from the textbook.
+> -- Problem Statement
+
+.Problem 2.54
+The steel, rectangular parallelepiped (stem:[E = 200~GPa] and stem:[\nu = 0.3]) shown in xref:fig-12-problem_statement[] has dimensions stem:[a = 250~mm], stem:[b = 200~mm], and stem:[c = 150~mm].
+It is subjected to triaxial stresses stem:[\sigma_{x} = -60~MPa], stem:[\sigma_{y} = -50~MPa], and stem:[\sigma_{z} = -40~MPa] acting on the stem:[x], stem:[y], and stem:[z] faces.
+Determine (a) the changes stem:[\Delta a], stem:[\Delta b], and stem:[\Delta c] in the dimensions of the block, and (b) the change stem:[\Delta V] in the volume.
+[#fig-12-problem_statement]
+.Adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+image::./12-problem_statement_220221_202215_EST.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+.Solution
+// solution codes
+
+
+Following a similar procedure as in xref:sec-11[], the changes in length for each side and the final volume of the parallelepiped are: stem:[\Delta a = 0.006~mm], stem:[\Delta b = 0.04~mm], stem:[\Delta c = 0.069~mm], and stem:[V_{f} = [1 + (\epsilon_{x} - 2\nu\epsilon_{x})\]dxdydz = V_{0} + \Delta V = -2.25k~mm^{3}].
+
+
+
+// [appendix#sec-appendix-Figures]
+// == Figures
+
+
+
+[bibliography]
+== Bibliography
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks
