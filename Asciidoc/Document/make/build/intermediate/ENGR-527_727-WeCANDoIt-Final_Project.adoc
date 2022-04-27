@@ -15,11 +15,11 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :section-refsig: Sec.
 :stem: latexmath
 :eqnums: AMS
-// :stylesdir: {docdir}
-// :stylesheet: asme.css
+:stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+:stylesheet: asme.css
 :noheader:
 :nofooter:
-:docinfodir: {docdir}
+:docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
 :docinfo: private
 :front-matter: any
 :!last-update-label:

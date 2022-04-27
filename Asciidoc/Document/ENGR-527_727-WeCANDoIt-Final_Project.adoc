@@ -15,11 +15,11 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :section-refsig: Sec.
 :stem: latexmath
 :eqnums: AMS
-// :stylesdir: {docdir}
-// :stylesheet: asme.css
+:stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+:stylesheet: asme.css
 :noheader:
 :nofooter:
-:docinfodir: {docdir}
+:docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
 :docinfo: private
 :front-matter: any
 :!last-update-label:
@@ -41,6 +41,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 // begin document
 [abstract]
 .Abstract
+As the consumption of sugary carbonated drinks has increased in recent years, an overwhelming number of aluminum cans have entered waste disposal facilities. To reduce the spatial requirement of the individual cans, we propose a rotationally driven high-throughput can crushing device that operates either via human or machine power to easily deform cans to at least 20% of the original volume. By utilizing a varying thickness wheel, the rotation of the wheel compresses the can against the wall of the device to less than 20% of the volume. The shaft is constructed from AISI 316 while the crushing wheel is cast stainless steel. A finite element study was conducted to validate that the stresses experienced in the design did not surpass the yield stresses of the components. The proposed device solves the issue of crushing cans and allows for automatic reloading to allow for continued operation. 
 cite:[uguralAdvancedMechanicsMaterials2019]
 // *Keywords:* _{keywords}_
 
@@ -52,7 +53,17 @@ cite:[uguralAdvancedMechanicsMaterials2019]
 :!figs:
 :!tabs:
 
+[#sec-development, {counter:development}]
+== Development of Engineering Specifications
 
+[#sec-synthesis, {counter:synthesis}]
+== Sythesis of the Design
+
+[#sec-design, {counter:design}]
+== Deisgn Analysis and Optimization
+
+[#sec-conclusions, {counter:conclusions}]
+== Conclustions
 
 // [appendix#sec-appendix-Figures]
 // == Figures
