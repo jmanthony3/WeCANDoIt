@@ -1,0 +1,311 @@
+/* @media screen {
+    @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+    @import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+} */
+
+/* define custom styles */
+body {
+    /* width: 90%; */
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-size: 10pt;
+    /* color: black; */
+}
+#header {
+    font-family: Arial;
+    font-style: normal;
+    font-size: 11pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: normal;
+    line-height-step: 12pt;
+}
+#author {
+    font-size: 10pt;
+    text-transform: capitalize;
+}
+.affiliations {
+    font-family: Arial;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: normal;
+    color: black;
+    text-align: center;
+}
+/* h1 {
+    font-size: 11pt;
+    text-align: center;
+    line-break: loose;
+} */
+#content {
+    /* column-count: 2;
+    column-gap: 0.25in;
+    column-width: calc(7.25/2)in;
+    column-fill: balance; */
+    orphans: 3;
+    widows: 1;
+    display: flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/* .sect1, #preamble { */
+/* .sect1 {
+    column-count: 2;
+    column-fill: balance;
+    column-gap: 0.25in;
+    break-before: auto;
+    break-inside: avoid-column;
+    line-break: normal;
+} */
+.sect1+.sect1 {
+    border-top: none;
+}
+.sect2 {
+    break-before: auto;
+    break-inside: avoid;
+    break-inside: auto;
+}
+h2,h3,h4,h5 {
+    font-family: Arial;
+    /* font-style: normal; */
+    font-weight: bold;
+    /* color: black; */
+    text-transform: uppercase;
+    /* page-break-after: avoid; */
+    /* page-break-inside: avoid; */
+    break-before: avoid;
+    break-inside: avoid;
+}
+/* h1+p, h2+p, h3+p {
+    page-break-before: avoid;
+} */
+/* span#author.author{
+    text-align: center;
+} */
+/* h2 {
+    font-size: 10pt;
+    break-before: avoid;
+} */
+h3 {
+    /* font-size: 10pt; */
+    text-transform: capitalize;
+}
+.abstract blockquote {
+    padding:0;
+    margin:0;
+    font-style: italic;
+    text-align: justify;
+    text-indent: 0.25in;
+}
+p {
+    text-align: justify;
+    text-indent: 0.25in;
+    /* break-inside: auto; */
+}
+a {
+    color: blue;
+}
+/* table, figure {
+    break-inside: avoid;
+    break-inside: avoid-column;
+    break-inside: ;
+    page-break-inside: avoid;
+} */
+img {
+    width: 70.7%;
+    align-self: center;
+}
+.imageblock > .title {
+    font-size: 9pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.floatnumber {
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: bold;
+}
+.stemblock > .content {
+    font-family: "Cambria Math";
+    font-size: 12pt;
+    text-align: center;
+    line-break: auto;
+}
+.exampleblock > .title {
+    font-size: 9pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.tableblock > .title {
+    font-size: 9pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.listingblock > .title {
+    font-size: 9pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.listingblock .content {
+    display: block;
+    box-sizing: border-box;
+}
+/* header formatting */
+table {
+    width: 100%;
+}
+td {
+    vertical-align: top;
+}
+.d1 {
+    text-align: left;
+}
+.d2 {
+    text-align: center;
+}
+.d3 {
+    text-align: right;
+}
+.copy {
+    visibility: hidden;
+}
+.copy, .d3 {
+    white-space: nowrap;
+}
+.header-text {
+    /* margin-top: 0.5in;
+    margin-right: 0.5in; */
+    font-family: Arial;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: bold;
+    /* color: black; */
+}
+.header-text-alt {
+    /* margin-top: 0.5in;
+    margin-right: 0.5in; */
+    font-family: Arial;
+    font-style: normal;
+    font-size: 16pt;
+    font-weight: bold;
+    /* color: black; */
+}
+.title-author-affil {
+    font-family: Arial;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: normal;
+}
+.title {
+    font-size: 11pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.author {
+    font-weight: bold;
+}
+/* footer formatting */
+#footer-text {
+    width: 100%;
+    font-family: "Times New Roman";
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: normal;
+    display: table;
+}
+
+/* define custom format for media */
+@media print {
+    @page {
+        size: letter;
+        margin-top: 0.5in;
+        /* margin-bottom: 1in; */
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+    }
+    body {
+        width: 7.5in;
+        height: 9.5in;
+        /* size: letter; */
+        /* margin: 0.5in 1in 0.5in 0.5in; */
+        /* margin-top: 0.5in;
+        margin-bottom: 1in;
+        margin-left: 0.5in;
+        margin-right: 0.5in; */
+        /* font settings went here */
+        page-break-before: always;
+        page-break-inside: auto;
+        line-height: 12pt;
+        line-break: auto;
+        /* line-height-step: 12pt; */
+        /* column-count: 2;
+        column-fill: balance;
+        column-gap: 0.25in;
+        display: flexbox;
+        flex-direction: column; */
+        /* flex-flow: wrap; */
+        /* break-inside: avoid-column; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* flex-wrap: wrap; */
+        /* break-inside: avoid-column; */
+    }
+    #content {
+        /* width: 7.5in;
+        height: 9.5in; */
+        /* margin-top: 1in; */
+        /* margin-bottom: 2in; */
+        /* margin-left: 0.5in; */
+        /* margin-right: 0.5in; */
+        column-count: 1;
+        /* column-gap: 0.25in;
+        column-width: calc(7.25/2)in; */
+        column-fill: balance;
+        /* orphans: 3;
+        display: flexbox;
+        flex-direction: column;
+        flex-wrap: wrap; */
+    }
+    img {
+        /* width: 70.7%;
+        align-items: center; */
+        break-inside: avoid;
+    }
+    .imageblock > .title {
+        /* font-size: 9pt;
+        text-transform: uppercase; */
+        break-inside: avoid;
+    }
+    .figgynumber {
+        /* font-family: Arial;
+        font-size: 10pt;
+        font-weight: bold; */
+        break-inside: avoid;
+    }
+    .stemblock > .content {
+        /* font-family: "Cambria Math";
+        font-size: 12pt;
+        text-align: center;
+        line-break: strict; */
+        break-inside: avoid;
+    }
+    #footer-text {
+        /* size: letter; */
+        width: 7.5in;
+        /* height: 11in; */
+        /* margin-top: 0in;
+        margin-bottom: 0in; */
+        /* margin-left: 0.5in;
+        margin-right: 0.5in; */
+        /* font-family: "Times New Roman";
+        font-style: normal;
+        font-size: 10pt;
+        font-weight: bold; */
+        position: fixed;
+        bottom: 0;
+        /* left: 50%; */
+    }
+}

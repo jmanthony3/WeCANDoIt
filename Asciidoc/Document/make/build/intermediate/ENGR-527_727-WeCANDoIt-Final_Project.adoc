@@ -1,0 +1,68 @@
+// document metadata
+= Final Project
+Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty.edu>
+:affiliation: PhD Students
+:document_version: 1.0
+:revdate: April 27, 2022
+// :description: 
+// :keywords: 
+:imagesdir: {docdir}/ENGR-527_727-WeCANDoIt-Final_Project
+:bibtex-file: ENGR-527_727-WeCANDoIt-Final_Project.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesdir: {docdir}
+// :stylesheet: asme.css
+:noheader:
+:nofooter:
+:docinfodir: {docdir}
+:docinfo: private
+:front-matter: any
+:!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+
+// end document metadata
+
+
+
+
+
+// begin document
+[abstract]
+.Abstract
+cite:[uguralAdvancedMechanicsMaterials2019]
+// *Keywords:* _{keywords}_
+
+
+
+[#sec-intro, {counter:secs}]
+== Introduction
+:!subs:
+:!figs:
+:!tabs:
+
+
+
+// [appendix#sec-appendix-Figures]
+// == Figures
+
+
+
+[bibliography]
+== Bibliography
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks
