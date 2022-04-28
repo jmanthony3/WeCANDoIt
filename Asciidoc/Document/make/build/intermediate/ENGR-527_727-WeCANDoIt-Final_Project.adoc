@@ -49,9 +49,9 @@ cite:[uguralAdvancedMechanicsMaterials2019]
 
 [stem#eq-nomenclature, reftext="Eq. {secs}-{counter:eqs}"]
 ++++
-\begin{align}
-    \tau &= \text{shear stress}\    \theta &= \text{angular displacement}\    a &= \text{height of the hexagonal cross section}\    b & = \text{base of rectangular cross section}\    h &= \text{height of rectangular cross section}\    F &= \text{force applied at the end of the handle}\    M &= \text{resultant moment from the force applied to the handle}\    T &= \text{torque applied to the shaft}\    y &= \text{distance from neutral axis for bending stress}\    G &= \text{shear modulus}
-\end{align}
+\begin{align*}
+    \tau &= \text{shear stress}\\    \theta &= \text{angular displacement}\\    a &= \text{height of the hexagonal cross section}\\    b & = \text{base of rectangular cross section}\\    h &= \text{height of rectangular cross section}\\    F &= \text{force applied at the end of the handle}\\    M &= \text{resultant moment from the force applied to the handle}\\    T &= \text{torque applied to the shaft}\\    y &= \text{distance from neutral axis for bending stress}\\    G &= \text{shear modulus}
+\end{align*}
 ++++
 == Introduction
 As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced. To counteract the volumetric deman of waste faciliti
@@ -86,6 +86,7 @@ INCLUDE IMAGE OF THE HEXAGONAL CROSS SECTION
 [#fig-5-problem_statement]
 .Figure Caption
 image::./2-shaft_cross_section.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
 
 [stem#eq-hex-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
 ++++

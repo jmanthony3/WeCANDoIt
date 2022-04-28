@@ -52,18 +52,18 @@ cite:[uguralAdvancedMechanicsMaterials2019]
 
 [stem#eq-nomenclature, reftext="Eq. {secs}-{counter:eqs}"]
 ++++
-\begin{align}
-    \tau &= \text{shear stress}\\
-    \theta &= \text{angular displacement}\\
-    a &= \text{height of the hexagonal cross section}\\
-    b & = \text{base of rectangular cross section}\\
-    h &= \text{height of rectangular cross section}\\
-    F &= \text{force applied at the end of the handle}\\
-    M &= \text{resultant moment from the force applied to the handle}\\
-    T &= \text{torque applied to the shaft}\\
-    y &= \text{distance from neutral axis for bending stress}\\
+\begin{align*}
+    \tau &= \text{shear stress}\\\
+    \theta &= \text{angular displacement}\\\
+    a &= \text{height of the hexagonal cross section}\\\
+    b & = \text{base of rectangular cross section}\\\
+    h &= \text{height of rectangular cross section}\\\
+    F &= \text{force applied at the end of the handle}\\\
+    M &= \text{resultant moment from the force applied to the handle}\\\
+    T &= \text{torque applied to the shaft}\\\
+    y &= \text{distance from neutral axis for bending stress}\\\
     G &= \text{shear modulus}
-\end{align}
+\end{align*}
 ++++
 == Introduction
 As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced. To counteract the volumetric deman of waste faciliti
@@ -76,7 +76,10 @@ As the consumption of soda continues to increase internationally, landfills are 
 == Development of Engineering Specifications
 To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength. First, the average pulling force for a human was determined to be 20 lbf which is consistent with NASA standards cite:[christensenman]. In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts. In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr. To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in REFERENCE CAN CRUSHING FIGURE. The avereage maximum crushing force was found to be approximately 1.3kN to reduce the can to 20% of the original volume. For the dimensions of an aluminum beverage can, the can was considered to have an original height of 157mm and to achieve 80% reduction in volume, the can would need to be deformed to a thickness of 31.4mm. The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests. Furthermore, from the project instructions, the final design was required to have te ability to be either mechanically or electrically driven. Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed. The metric for the human force and crushing force are determined via mechanical analysis. For the material selection, the commeercially listed for the components will be used in the design.
 
-INCLUDE CAN CRUSHING PLOT
+[#fig-can_plot]
+.Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted. 
+image::./compression_results.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
 
 [#sec-synthesis, {counter:synthesis}]
 == Sythesis of the Design
@@ -128,6 +131,8 @@ Within the brief analytical work conducted, both the shear stress in the shaft a
 INCLUDE FIGURE OF THE HANDLE
 
 === Finite Element Analysis
+
+
 
 [#sec-conclusions, {counter:conclusions}]
 == Conclusions
