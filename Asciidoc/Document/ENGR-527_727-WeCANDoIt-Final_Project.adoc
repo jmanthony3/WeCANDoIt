@@ -15,13 +15,13 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :section-refsig: Sec.
 :stem: latexmath
 :eqnums: AMS
-:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
-// :stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+:stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :stylesheet: asme.css
 :noheader:
 :nofooter:
-:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
-// :docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+:docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :docinfo: private
 :front-matter: any
 :!last-update-label:
@@ -87,7 +87,11 @@ image::./compression_results.png[caption=<span class="figgynumber">Figure {secs}
 
 [#sec-synthesis, {counter:synthesis}]
 == Sythesis of the Design
-In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in REFERENCE HANDLE PICTURE
+In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in xref:[fig-handle_fbd]
+
+[#fig-handle_fbd]
+.FBD for the handle to determine the maximum bending stress at the connection.
+image::./handle.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", width=284 height = 300]
 
 
 [#sec-design, {counter:design}]

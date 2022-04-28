@@ -15,13 +15,13 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :section-refsig: Sec.
 :stem: latexmath
 :eqnums: AMS
-:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
-// :stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+:stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :stylesheet: asme.css
 :noheader:
 :nofooter:
-:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
-// :docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+:docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :docinfo: private
 :front-matter: any
 :!last-update-label:
@@ -68,11 +68,18 @@ As the consumption of soda continues to increase internationally, landfills are 
 == Development of Engineering Specifications
 To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength. First, the average pulling force for a human was determined to be 20 lbf which is consistent with NASA standards cite:[christensenman]. In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts. In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr. To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in REFERENCE CAN CRUSHING FIGURE. The avereage maximum crushing force was found to be approximately 1.3kN to reduce the can to 20% of the original volume. For the dimensions of an aluminum beverage can, the can was considered to have an original height of 157mm and to achieve 80% reduction in volume, the can would need to be deformed to a thickness of 31.4mm. The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests. Furthermore, from the project instructions, the final design was required to have te ability to be either mechanically or electrically driven. Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed. The metric for the human force and crushing force are determined via mechanical analysis. For the material selection, the commeercially listed for the components will be used in the design.
 
-INCLUDE CAN CRUSHING PLOT
+[#fig-can_plot]
+.Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted. 
+image::./compression_results.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
 
 [#sec-synthesis, {counter:synthesis}]
 == Sythesis of the Design
-In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in REFERENCE HANDLE PICTURE
+In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in xref:[fig-handle_fbd]
+
+[#fig-handle_fbd]
+.FBD for the handle to determine the maximum bending stress at the connection.
+image::./handle.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", width=284, height = 300]
 
 
 [#sec-design, {counter:design}]
@@ -89,7 +96,7 @@ INCLUDE IMAGE OF THE HEXAGONAL CROSS SECTION
 
 [#fig-5-problem_statement]
 .Figure Caption
-image::./2-shaft_cross_section.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./1-shaft_cross_section.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 
 [stem#eq-hex-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
@@ -119,6 +126,8 @@ Within the brief analytical work conducted, both the shear stress in the shaft a
 INCLUDE FIGURE OF THE HANDLE
 
 === Finite Element Analysis
+
+
 
 [#sec-conclusions, {counter:conclusions}]
 == Conclusions

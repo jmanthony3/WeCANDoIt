@@ -456,8 +456,11 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <div class="paragraph">
 <p>To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength. First, the average pulling force for a human was determined to be 20 lbf which is consistent with NASA standards [<a href="#christensenman">1</a>]. In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts. In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr. To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in REFERENCE CAN CRUSHING FIGURE. The avereage maximum crushing force was found to be approximately 1.3kN to reduce the can to 20% of the original volume. For the dimensions of an aluminum beverage can, the can was considered to have an original height of 157mm and to achieve 80% reduction in volume, the can would need to be deformed to a thickness of 31.4mm. The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests. Furthermore, from the project instructions, the final design was required to have te ability to be either mechanically or electrically driven. Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed. The metric for the human force and crushing force are determined via mechanical analysis. For the material selection, the commeercially listed for the components will be used in the design.</p>
 </div>
-<div class="paragraph">
-<p>INCLUDE CAN CRUSHING PLOT</p>
+<div id="fig-can_plot" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/compression_results.png" alt="compression results">
+</div>
+<div class="title"><span class="figgynumber">Figure 1-1. </span>Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted.</div>
 </div>
 </div>
 </div>
@@ -465,7 +468,13 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h2 id="sec-synthesis">4. Sythesis of the Design</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in REFERENCE HANDLE PICTURE</p>
+<p>In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in xref:[fig-handle_fbd]</p>
+</div>
+<div id="fig-handle_fbd" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/handle.png" alt="handle" width="284" height="300">
+</div>
+<div class="title"><span class="figgynumber">Figure 1-2. </span>FBD for the handle to determine the maximum bending stress at the connection.</div>
 </div>
 </div>
 </div>
@@ -480,16 +489,16 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <div class="sect3">
 <h4 id="_shaft_cross_section">5.1.1. Shaft Cross-Section</h4>
 <div class="paragraph">
-<p>From Table 6.2 in [<a href="#uguralAdvancedMechanicsMaterials2019">2</a>], the equations for the maximum shear stress, \(\tau_A\), and angular deflection, \(\theta\),  for a hexagonal cross section similar <a href="#fig-5-problem_statement">Fig. 1-1</a> to are provided:</p>
+<p>From Table 6.2 in [<a href="#uguralAdvancedMechanicsMaterials2019">2</a>], the equations for the maximum shear stress, \(\tau_A\), and angular deflection, \(\theta\),  for a hexagonal cross section similar <a href="#fig-5-problem_statement">Fig. 1-3</a> to are provided:</p>
 </div>
 <div class="paragraph">
 <p>INCLUDE IMAGE OF THE HEXAGONAL CROSS SECTION</p>
 </div>
 <div id="fig-5-problem_statement" class="imageblock">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/2-shaft_cross_section.png" alt="2 shaft cross section">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/1-shaft_cross_section.png" alt="1 shaft cross section">
 </div>
-<div class="title"><span class="figgynumber">Figure 1-1. </span>Figure Caption</div>
+<div class="title"><span class="figgynumber">Figure 1-3. </span>Figure Caption</div>
 </div>
 <div id="eq-hex-cross-section" class="stemblock">
 <div class="content">
