@@ -423,15 +423,107 @@ MathJax = {
 <div id="preamble">
 <div class="sectionbody">
 <div class="quoteblock abstract">
-<div class="title">Abstract</div>
 <blockquote>
-[<a href="#uguralAdvancedMechanicsMaterials2019">1</a>]
+As the consumption of sugary carbonated drinks has increased in recent years, an overwhelming number of aluminum cans have entered waste disposal facilities. To reduce the spatial requirement of the individual cans, we propose a rotationally driven high-throughput can crushing device that operates either via human or machine power to easily deform cans to at least 20% of the original volume. By utilizing a varying thickness wheel, the rotation of the wheel compresses the can against the wall of the device to less than 20% of the volume. The shaft is constructed from AISI 316 while the crushing wheel is cast stainless steel. A finite element study was conducted to validate that the stresses experienced in the design did not surpass the yield stresses of the components. The proposed device solves the issue of crushing cans and allows for automatic reloading to allow for continued operation.
 </blockquote>
+</div>
+<div class="paragraph">
+<p>[<a href="#uguralAdvancedMechanicsMaterials2019">1</a>]
+.Abstract</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="sec-intro">1. Introduction</h2>
+<h2 id="sec-nomenclature">1. Nomenclature</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">2. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced. To counteract the volumetric deman of waste faciliti</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-development">3. Development of Engineering Specifications</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-synthesis">4. Sythesis of the Design</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>\(\sigma_y = \frac{1}{2}\)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-design">5. Deisgn Analysis and Optimization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For analyzing the design of the can crushing mechanism, the analysis was broken down into two type: analytical and FEA. The analytical work focused on two points of interested: a point on the handle, and a point on the cross section of the shaft. Due to the complex geometry of the fly wheel, a FEA was carried out on the part assuming the maximum possible load applied by a human.</p>
+</div>
+<div class="sect2">
+<h3 id="_analytical_methods">5.1. Analytical Methods</h3>
+<div class="sect3">
+<h4 id="_shaft_cross_section">5.1.1. Shaft Cross-Section</h4>
+<div class="paragraph">
+<p>From Table 6.2 in [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>], the equations for the maximum shear stress, \(\tau_A\), and angular deflection, \(\theta\),  for a hexagonal cross section similar <a href="#Fig-1">[Fig-1]</a> to are provided:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/make/build/intermediate/ENGR-527_727-WeCANDoIt-Final_Project/images/shaft_cross_section.png" alt="shaft cross section">
+</div>
+</div>
+<div id="eq-hex-cross-section" class="stemblock">
+<div class="content">
+\[\begin{align}
+    \tau_A = \frac{5.7T}{a^3}\    \theta = \frac{8.8T}{a^4G}L
+\end{align}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(T\) is the applied torque, \(a\) is the height of the hexagon, and \(G\) is the modulus of rigidity. From the geometry of the shaft, \(a\) is equal to 1 inch. For AISI 316, the shear modulus is 78GPa. For an applied torque of 220lbf·in, the maximum shear stress is predicted to be 8.646MPa which closely matches the FEA results. Furthermore, the maximum predicted deflection is 2.05 milliradians. The delfection of the rod predicted via this equation is not comparable to the FEA results since the effects of the fly wheel prevent some of the deflection that would be experienced by the shaft.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_handle">5.2. Handle</h3>
+<div class="paragraph">
+<p>The handle of the mechanism is subject to a moment produced by the force applied to the handle. Since the cross section of the bar is rectangular, the standard equation for bending applied. At the end of the handle a force of 20 pounds force is applied. The handle has a length of 11 inches with a cross section of 0.75 inches by 0.6 inches. Using the equation for bending stress at point A on the cross section:</p>
+</div>
+<div id="eq-rect-cross-section" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\sigma_A = \frac{M\ y}{I}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(M = 20\text{lb}_f*10.125\text{inch} = 202.5\text{lb}_f\cdot\text{inch}\), \(y = 0.375\text{inch}\), and \(I = \frac{1}{12}(0.6\text{inch})(0.75\text{inch})^3\). This gives a maximum normal stress of 24.8MPa. Once again, this closely matches the results determined in the FEA analysis near the point of interest.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusions">5.3. Conclusions</h3>
+<div class="paragraph">
+<p>Within the brief analytical work conducted, both the shear stress in the shaft and the maximum normal stress are both well below the limits of the material. For the fly wheel, a FEA approach is employed due to the complex geometry of the contact surface with the can. The checks provided by the analytical work confirm that the FEA results are close to the predicted values.</p>
+</div>
+<div class="paragraph">
+<p>INCLUDE FIGURE OF THE HANDLE</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_finite_element_analysis">5.4. Finite Element Analysis</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-conclusions">6. Conclustions</h2>
 <div class="sectionbody">
 
 </div>
