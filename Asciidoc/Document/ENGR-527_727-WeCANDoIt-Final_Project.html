@@ -446,7 +446,10 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h2 id="_introduction">2. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced. To counteract the volumetric deman of waste facilities, the</p>
+<p>As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced. Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging [<a href="#epa">1</a>]. To improve the ability to transport the cans to either a recycling facility or a landfill, the reduction of volume decrease the required space and increase the ability to transport more cans in a single delivery. Creating can crushing mechanisms are either human-powered or complex electro-mechanical machines. The human aspect of the design encourages people to be engaged in the recycling process and be conscious of their choices. However, creating a device capable of being electrically driven allows for the process to be automated and provide a possible means of high throughput crushing.</p>
+</div>
+<div class="paragraph">
+<p>In the design of the device, an analysis of similar can crushing devices was performed to understand the required features for the desired device. Next, the design was formulated and components were selected from common part providers or were designed to be easily fabricated. To ensure the feasability of the design and materials selection, an analytical analysis of two key points was conducted along with a finite element analysis (FEA) of the entire system at the maximum crushing force fo the can. Lastl, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infite life design.</p>
 </div>
 </div>
 </div>
@@ -454,7 +457,7 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h2 id="sec-development">3. Development of Engineering Specifications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength. First, the average pulling force for a human was determined to be 20 lbf which is consistent with NASA standards [<a href="#christensenman">christensenman</a>]. In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts. In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr. To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in <a href="#fig-can_plot">Fig. 1-1</a>. The avereage maximum crushing force was found to be approximately 1.3kN to reduce the can to 20% of the original volume. For the dimensions of an aluminum beverage can, the can was considered to have an original height of 157mm and to achieve 80% reduction in volume, the can would need to be deformed to a thickness of 31.4mm. The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests. Furthermore, from the project instructions, the final design was required to have te ability to be either mechanically or electrically driven. Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed. The metric for the human force and crushing force are determined via mechanical analysis. For the material selection, the commeercially listed for the components will be used in the design.</p>
+<p>To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength. First, the average pulling force for a human was determined to be 20 lbf which is consistent with NASA standards [<a href="#christensenman">christensenman</a>]. In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts. In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr. To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in <a href="#fig-can_plot">Fig. 1-1</a>. The avereage maximum crushing force was found to be approximately 1.3kN to reduce the can to 20% of the original volume. For the dimensions of an aluminum beverage can, the can was considered to have an original height of 157mm and to achieve 80% reduction in volume, the can would need to be deformed to a thickness of 31.4mm. The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests. Furthermore, from the project instructions, the final design was required to have te ability to be either mechanically or electrically driven. Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed. The metric for the human force and crushing force are determined via mechanical analysis. For the material selection, the commercially listed for the components will be used in the design.</p>
 </div>
 <div id="fig-can_plot" class="imageblock text-center">
 <div class="content">
@@ -468,13 +471,20 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h2 id="sec-synthesis">4. Sythesis of the Design</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in <a href="#fig-handle_fbd">Fig. 1-2</a></p>
+<p>In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in <a href="#fig-manual_device">Fig. 1-2</a>. While the common lever-based design allows for a can to be easily crushed, the challenge arises in creating an automated and high-throughput can crushing device. The common industrial devices serve to shred rather than compress the aluminum cans for use in recycling facilities. In investigating Do-It-Yourself (DIY) designs, a common method for automating the process is to create a crank-slider mechanism to compress the can. However, the number of moving parts in the design creates a higher likelihood of component failure if the device is operated for long periods of time.</p>
 </div>
-<div id="fig-handle_fbd" class="imageblock">
+<div class="paragraph">
+<p>The design of the proposed device functions on the use of a "flywheel" with varying thickness to compress the aluminum can against the wall of the device. The thickness of the flywheel varies in the angularly allowing for a gradual crushing of the can. Once the can has been reduce to 20 of the original volume, the can exits the device via a slot in the bottom of the housing. As the wheel completes a revolution, the opening for a can reaches the can entry location and allows the can to drop into the crushing area. The flywheel is suggested to be made from cast stainless steel. The shaft of the flywheel is hexagonal and purchased from McMasterCarr and is made from AISI 316. In the current iteration, a handle purchased from McMasterCarr is attached to the shaft and a human is expected to provide the required rotational input to the device. However, a coupler could be used to attach the shaft to a motor to improve the rate of compression for the cans. The device is shown in <a href="#fig-design">Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber.</a>.</p>
+</div>
+<div id="fig-design" class="paragraph">
+<div class="title">Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber.</div>
+<p><span class="image text-center"><img src="./ENGR-527_727-WeCANDoIt-Final_Project/design.png" alt="design"></span></p>
+</div>
+<div id="fig-manual_device" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/handle.png" alt="handle" width="340" height="600">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/manual_device.jpg" alt="manual device">
 </div>
-<div class="title"><span class="figgynumber">Figure 1-2. </span>FBD for the handle to determine the maximum bending stress at the connection.</div>
+<div class="title"><span class="figgynumber">Figure 1-2. </span>Example of a common design for manual can crushing devices.</div>
 </div>
 </div>
 </div>
@@ -488,17 +498,14 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h3 id="_analytical_methods">5.1. Analytical Methods</h3>
 <div class="sect3">
 <h4 id="_shaft_cross_section">5.1.1. Shaft Cross-Section</h4>
-<div class="paragraph">
-<p>From Table 6.2 in [<a href="#uguralAdvancedMechanicsMaterials2019">2</a>], the equations for the maximum shear stress, \(\tau_A\), and angular deflection, \(\theta\),  for a hexagonal cross section similar <a href="#fig-5-problem_statement">Fig. 1-3</a> to are provided:</p>
-</div>
-<div class="paragraph">
-<p>INCLUDE IMAGE OF THE HEXAGONAL CROSS SECTION</p>
-</div>
-<div id="fig-5-problem_statement" class="imageblock">
+<div id="fig-hex_cross_section" class="imageblock">
 <div class="content">
 <img src="./ENGR-527_727-WeCANDoIt-Final_Project/shaft_cross_section.png" alt="shaft cross section">
 </div>
-<div class="title"><span class="figgynumber">Figure 1-3. </span>Figure Caption</div>
+<div class="title"><span class="figgynumber">Figure 1-3. </span>Diagram for the hexagonal shaft cross section with the applied torque and key dimensions highlighted.</div>
+</div>
+<div class="paragraph">
+<p>From Table 6.2 in [<a href="#uguralAdvancedMechanicsMaterials2019">3</a>], the equations for the maximum shear stress, \(\tau_A\), and angular deflection, \(\theta\), for a hexagonal cross section. The free body diagram for the torque applied to the shaft is shown in <a href="#fig-hex_cross_section">Fig. 1-3</a>. To calculate the shear stress and angular deflection, the equations for shear stress and deflection from the textbook [<a href="#uguralAdvancedMechanicsMaterials2019">3</a>] :</p>
 </div>
 <div id="eq-hex-cross-section" class="stemblock">
 <div class="content">
@@ -514,7 +521,13 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <div class="sect3">
 <h4 id="_handle">5.1.2. Handle</h4>
 <div class="paragraph">
-<p>The handle of the mechanism is subject to a moment produced by the force applied to the handle. Since the cross section of the bar is rectangular, the standard equation for bending applied. At the end of the handle a force of 20 pounds force is applied. The handle has a length of 11 inches with a cross section of 0.75 inches by 0.6 inches. Using the equation for bending stress at point A on the cross section:</p>
+<p>The handle of the mechanism is subject to a moment produced by the force applied to the handle(see <a href="#fig-handle_fbd">Fig. 1-4</a>]). Since the cross section of the bar is rectangular, the standard equation for bending applied. At the end of the handle a force of 20 pounds force is applied. The handle has a length of 11 inches with a cross section of 0.75 inches by 0.6 inches. Using the equation for bending stress at point A on the cross section:</p>
+</div>
+<div id="fig-handle_fbd" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/handle.png" alt="handle">
+</div>
+<div class="title"><span class="figgynumber">Figure 1-4. </span>FBD for the handle to determine the maximum bending stress at the connection.</div>
 </div>
 <div id="eq-rect-cross-section" class="stemblock">
 <div class="content">
@@ -531,9 +544,6 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h4 id="_conclusions">5.1.3. Conclusions</h4>
 <div class="paragraph">
 <p>Within the brief analytical work conducted, both the shear stress in the shaft and the maximum normal stress are both well below the limits of the material. For the fly wheel, a FEA approach is employed due to the complex geometry of the contact surface with the can. The checks provided by the analytical work confirm that the FEA results are close to the predicted values.</p>
-</div>
-<div class="paragraph">
-<p>INCLUDE FIGURE OF THE HANDLE</p>
 </div>
 </div>
 </div>
@@ -553,10 +563,13 @@ As the consumption of sugary carbonated drinks has increased in recent years, an
 <h2 id="_bibliography">Bibliography</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a id="christensenman"></a>[1] christensenman</p>
+<p><a id="epa"></a>[1] <em>EPA</em>. Environmental Protection Agency, [Online]. Available: <a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/aluminum-material-specific-data" class="bare">https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/aluminum-material-specific-data</a>.</p>
 </div>
 <div class="paragraph">
-<p><a id="uguralAdvancedMechanicsMaterials2019"></a>[2] A. Ugural and S. Fenster, <em>Advanced Mechanics of Materials and Applied Elasticity (International Series in the Physical and Chemical Engineering Sciences)</em>, Sixth. Pearson, 2019.</p>
+<p><a id="christensenman"></a>[2] christensenman</p>
+</div>
+<div class="paragraph">
+<p><a id="uguralAdvancedMechanicsMaterials2019"></a>[3] A. Ugural and S. Fenster, <em>Advanced Mechanics of Materials and Applied Elasticity (International Series in the Physical and Chemical Engineering Sciences)</em>, Sixth. Pearson, 2019.</p>
 </div>
 </div>
 </div>

@@ -83,8 +83,17 @@ image::./compression_results.png[caption=<span class="figgynumber">Figure {secs}
 
 [#sec-synthesis, {counter:synthesis}]
 == Sythesis of the Design
-In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in xref:fig-handle_fbd[]
+In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered. While the common handle driven can crushing system as shown in xref:fig-manual_device[]. While the common lever-based design allows for a can to be easily crushed, the challenge arises in creating an automated and high-throughput can crushing device. The common industrial devices serve to shred rather than compress the aluminum cans for use in recycling facilities. In investigating Do-It-Yourself (DIY) designs, a common method for automating the process is to create a crank-slider mechanism to compress the can. However, the number of moving parts in the design creates a higher likelihood of component failure if the device is operated for long periods of time.
 
+The design of the proposed device functions on the use of a "flywheel" with varying thickness to compress the aluminum can against the wall of the device. The thickness of the flywheel varies in the angularly allowing for a gradual crushing of the can. Once the can has been reduce to 20 of the original volume, the can exits the device via a slot in the bottom of the housing. As the wheel completes a revolution, the opening for a can reaches the can entry location and allows the can to drop into the crushing area. The flywheel is suggested to be made from cast stainless steel. The shaft of the flywheel is hexagonal and purchased from McMasterCarr and is made from AISI 316. In the current iteration, a handle purchased from McMasterCarr is attached to the shaft and a human is expected to provide the required rotational input to the device. However, a coupler could be used to attach the shaft to a motor to improve the rate of compression for the cans. The device is shown in xref:fig-design[].
+
+[#fig-design]
+.Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber. 
+image:./design.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}",role=text-center]
+
+[#fig-manual_device]
+.Example of a common design for manual can crushing devices.
+image::./manual_device.jpg[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}",role=text-center]
 
 [#sec-design, {counter:design}]
 == Deisgn Analysis and Optimization
@@ -96,7 +105,7 @@ For analyzing the design of the can crushing mechanism, the analysis was broken 
 ==== Shaft Cross-Section
 
 [#fig-hex_cross_section]
-.Figure Caption
+.Diagram for the hexagonal shaft cross section with the applied torque and key dimensions highlighted. 
 image::./shaft_cross_section.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 From Table 6.2 in cite:[uguralAdvancedMechanicsMaterials2019], the equations for the maximum shear stress, stem:[\tau_A], and angular deflection, stem:[\theta], for a hexagonal cross section. The free body diagram for the torque applied to the shaft is shown in xref:fig-hex_cross_section[]. To calculate the shear stress and angular deflection, the equations for shear stress and deflection from the textbook cite:[uguralAdvancedMechanicsMaterials2019] :
