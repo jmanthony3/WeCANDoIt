@@ -16,12 +16,14 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :stem: latexmath
 :eqnums: AMS
 // {docdir}
-:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+:stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :stylesheet: asme.css
 :noheader:
 :nofooter:
 // {docdir}
-:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+:docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :docinfo: private
 :front-matter: any
 :!last-update-label:
@@ -33,6 +35,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 <%!
     from engineering_notation import EngNumber as engr
     import numpy as np
+    from pint import UnitRegistry as ureg
 %>
 // end document metadata
 
@@ -43,7 +46,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 // begin document
 [abstract]
 .Abstract
-cite:[uguralAdvancedMechanicsMaterials2019]
+
 // *Keywords:* _{keywords}_
 
 
