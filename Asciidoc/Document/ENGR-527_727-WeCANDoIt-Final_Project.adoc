@@ -6,7 +6,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :revdate: April 27, 2022
 // :description: 
 // :keywords: 
-:imagesdir: {docdir}/ENGR-527_727-WeCANDoIt-Final_Project
+:imagesdir: ./ENGR-527_727-WeCANDoIt-Final_Project
 :bibtex-file: ENGR-527_727-WeCANDoIt-Final_Project.bib
 :toc: auto
 :xrefstyle: short
@@ -15,11 +15,13 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :section-refsig: Sec.
 :stem: latexmath
 :eqnums: AMS
-:stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :stylesheet: asme.css
 :noheader:
 :nofooter:
-:docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+// :docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
 :docinfo: private
 :front-matter: any
 :!last-update-label:
@@ -40,11 +42,13 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 
 // begin document
 [abstract]
+.Abstract
 As the consumption of sugary carbonated drinks has increased in recent years, an overwhelming number of aluminum cans have entered waste disposal facilities. To reduce the spatial requirement of the individual cans, we propose a rotationally driven high-throughput can crushing device that operates either via human or machine power to easily deform cans to at least 20% of the original volume. By utilizing a varying thickness wheel, the rotation of the wheel compresses the can against the wall of the device to less than 20% of the volume. The shaft is constructed from AISI 316 while the crushing wheel is cast stainless steel. A finite element study was conducted to validate that the stresses experienced in the design did not surpass the yield stresses of the components. The proposed device solves the issue of crushing cans and allows for automatic reloading to allow for continued operation.
 
-cite:[uguralAdvancedMechanicsMaterials2019]
-.Abstract
 // *Keywords:* _{keywords}_
+
+
+
 [#sec-intro, {counter:secs}]
 
 [#sec-nomenclature, {counter:nomenclature}]
@@ -100,7 +104,7 @@ INCLUDE IMAGE OF THE HEXAGONAL CROSS SECTION
 
 [#fig-5-problem_statement]
 .Figure Caption
-image::./2-shaft_cross_section.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./1-shaft_cross_section.png[caption=<span class="figgynumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 
 [stem#eq-hex-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
