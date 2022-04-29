@@ -645,16 +645,22 @@ For the selected mesh element size of \(0.2~in\) and \(56,842\) number of elemen
 <div class="title"><span class="floatnumber">Figure 4-4. </span>bar</div>
 </div>
 <div class="paragraph">
-<p>To further demonstrate the importance of performing a mesh refinement study, examine <a href="#fig-fea_mesh_refinement-contact_line">Fig. 4-5</a>.
-Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in <a href="#fig-fea-cam">Fig. 4-8</a>), the stress normal to the axis of the shaft was observed to vary radially.
+<p>To further demonstrate the importance of performing a mesh refinement study, examine <a href="#fig-fea-mesh_refinement-contact_line">Fig. 4-5</a>.
+Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in <a href="#fig-fea-cam-normal">Fig. 4-6</a>), the stress normal to the axis of the shaft was observed to vary radially.
 The \(x\)-axis of this plot is in the domain \([0, \pi]\) because the cam requires only \(180^{\circ}\) rotation to crush the can.
 The stresses are in the axial direction of the shaft and have a positive sense toward where the handle connects to the shaft.</p>
 </div>
-<div id="fig-fea_mesh_refinement-contact_line" class="imageblock">
+<div id="fig-fea-mesh_refinement-contact_line" class="imageblock">
 <div class="content">
 <img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_contact_line.png" alt="mesh refinement contact line">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-5. </span>Radial distribution of normal stress in the shaft axial direction at the contacting line between the crushing face of the cam and the top of the can for various mesh element sizes.</div>
+</div>
+<div id="fig-fea-cam-normal" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_cam.png" alt="fea cam">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-6. </span>The maximum normal stress in the shaft axial direction of \(\sim 7~MPa\) (<a href="#fig-fea-mesh_refinement-contact_line">Fig. 4-5</a>) occurs at the rightmost extreme of the contact line as shown.</div>
 </div>
 </div>
 <div class="sect3">
@@ -675,45 +681,81 @@ Therefore, selection of this hexagonal shaft was sufficient for this design and 
 <div class="content">
 <img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_shaft.png" alt="fea shaft">
 </div>
-<div class="title"><span class="floatnumber">Figure 4-6. </span>A maximum shear stress of \(9.171~MPa\) may be seen at the shaft surface between the cam and bearing.</div>
+<div class="title"><span class="floatnumber">Figure 4-7. </span>A maximum shear stress of \(9.171~MPa\) may be seen at the shaft surface between the cam and bearing.</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_handle_2">Handle</h5>
 <div class="paragraph">
-<p>The shear strength of AISI 316 stainless steel is known to be in the range \([74.5, 597.0]~MPa\) [<a href="#OverviewMaterialsStainless">6</a>].
-The maximum shear stress in the shaft of \(9.171~MPa\) yields a factor of safety in the range of \([8.12, 65.10]\).
-Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(8.646~MPa\)) by \(5.89\%\)</p>
+<p><strong>SolidWorks</strong> lists the yield strength of 1023 carbon steel to be \(282.69~MPa\).
+The maximum bending stress in the handle of \(34~MPa\) yields a factor of safety of \(8.31\).
+Therefore, selection of this \(11~in\)handle to fit the hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(24.8~MPa\)) by \(31.29\%\).
+This large disparity is likely due to how the average reaction force from the can acts on the crushing face of the cam because of the complex surface geometry which cannot be so simplified as a simple torque for hand calculations.</p>
 </div>
 <div id="fig-fea_handle" class="imageblock">
 <div class="content">
 <img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_handle.png" alt="fea handle">
 </div>
-<div class="title"><span class="floatnumber">Figure 4-7. </span>A maximum bending stress of \(37~MPa\) occurs at the point in the arm of the handle close to the shaft.</div>
+<div class="title"><span class="floatnumber">Figure 4-8. </span>A maximum bending stress of \(34~MPa\) occurs at the point in the arm of the handle close to the shaft.</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_cam">Cam</h5>
-<div id="fig-fea-cam" class="imageblock">
-<div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_cam.png" alt="fea cam">
+<div class="paragraph">
+<p>Although, <strong>SolidWorks</strong> does not list all the material properties for the selected material for the cam, the maximum stress in the cam (based on its geometry distributing stresses) is approximately \(71.2~MPa\) and can be seen in <a href="#fig-fea-cam-max">Fig. 4-9</a>.
+This appears to occur in tension, so if the yield strength were assumed to be close to that for AISI 316, then the yield strength could be as \(172.4~MPa\) (as listed in <strong>SolidWorks</strong>) or \(207~MPa\) (as listed in McMaster-Carr [<a href="#mcmaster-carrCorrosionResistant316316L2021">3</a>]).
+This would result in a factor of safety in the range of \([2, 2]\).</p>
 </div>
-<div class="title"><span class="floatnumber">Figure 4-8. </span>The maximum normal stress in the shaft axial direction of \(\sim 7~MPa\) (<a href="#fig-fea_mesh_refinement-contact_line">Fig. 4-5</a>) occurs at the rightmost extreme of the contact line as shown.</div>
+<div id="fig-fea-cam-max" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea-cam-max_220429_191536_EST.png" alt="fea cam max 220429 191536 EST">
+</div>
+<div class="title">Figure 4-9. Maximum stress of \(71.2~MPa\) in the geometry of the cam.</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_chamber">Chamber</h5>
 <div class="paragraph">
-<p>The yield strength of AISI 316 stainless steel is listed in <strong>SolidWorks</strong> as \(172.4~MPa\); however, McMaster-Carr lists \(207~MPa\).
-The maximum stress in the chamber of \(1412~MPa\) yields a factor of safety in the range of \([122.10m, 146.60m]\).
-The location of this stress is depicted in <a href="#fig-fea_chamber">Fig. 4-9</a>.</p>
+<p>The maximum stress in the chamber of \(1412~MPa\) yields a factor of safety in the range of \([122.10m, 146.60m]\).
+The location of this stress is depicted in <a href="#fig-fea_chamber">Fig. 4-10</a>.</p>
 </div>
 <div id="fig-fea_chamber" class="imageblock">
 <div class="content">
 <img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_chamber.png" alt="fea chamber">
 </div>
-<div class="title"><span class="floatnumber">Figure 4-9. </span>The greatest stress seen in the chamber housing was \(1412000.0~GPa\) and occurred at the flange that must react to the can being crushed by the rotating cam.</div>
+<div class="title"><span class="floatnumber">Figure 4-10. </span>The greatest stress seen in the chamber housing was \(1412000.0~GPa\) and occurred at the flange that must react to the can being crushed by the rotating cam.</div>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fatigue">4.2.3. Fatigue</h4>
+<div class="paragraph">
+<p>This design was proposed to allow for continuous crushing of aluminum cans whether by human effort or electro-mechanically actuating the the cam.
+Normally, such designs, which are expected to withstand many cycles during a hopefully long service life, would require a fatigue analysis.
+As the authors were pressed for time to complete a fatigue simulation in some FEA software, literature values seem to indicate that fatigue may be a non-issue for the proposed design.</p>
+</div>
+<div class="paragraph">
+<p>Of the metals used throughout this analysis, the fatigue strengths of A2 tool steel (<a href="#fig-fea-fatigue-A2">Fig. 4-11</a>), a cast stainless steel (<a href="#fig-fea-fatigue-Cast">Fig. 4-12</a>), AISI 316 (<a href="#fig-fea-fatigue-AISI316">Fig. 4-13</a>), and 1023 carbon steel were found to be \(\sim 265~MPa\), \(\sim 400~MPa\), \(\sim 250~MPa\), and \(\sim 225~MPa\), respectively [<a href="#jovicevic-klugComparativeStudyConventional2020">7</a>, <a href="#okazakiCorrosionFatigueProperties2002">8</a>, <a href="#novyGigacycleFatigueEndurance2013">9</a>, <a href="#SAEAISI1023G10230">10</a>].
+The stresses seen in components of these metals do not come close to some of these fatigue strengths: \(\sim 15.81~MPa\) for the A2 tool steel inner ring of the bearings; and, \(9.171~MPa\) shear at the AISI 316 shaft and \(34~MPa\) in the 1023 carbon steel handle.
+The exception to this observation is for those stresses seen in the chamber: the \(1412000.0~MPa\) from FEA is much greater than \(\sim 250~MPa\) if assumed to be of similar grade steel as AISI 316.</p>
+</div>
+<div id="fig-fea-fatigue-A2" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/klug_fig5.png" alt="klug fig5">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-11. </span>Fatigue strength of A2 tool steel \( = \sim 265~MPa\). Adapted from [<a href="#jovicevic-klugComparativeStudyConventional2020">7</a>].</div>
+</div>
+<div id="fig-fea-fatigue-Cast" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/okazaki_fig7.pbm" alt="okazaki fig7">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-12. </span>Fatigue strength of one cast stainless steel (\(CoCrMo\)) \( = \sim 400~MPa\). Adapted from [<a href="#okazakiCorrosionFatigueProperties2002">8</a>].</div>
+</div>
+<div id="fig-fea-fatigue-AISI316" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/novy_fig4.png" alt="novy fig4">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-13. </span>Fatigue strength of AISI 316 steel \( = \sim 250~MPa\). Adapted from [<a href="#novyGigacycleFatigueEndurance2013">9</a>].</div>
 </div>
 </div>
 </div>
@@ -723,7 +765,7 @@ The location of this stress is depicted in <a href="#fig-fea_chamber">Fig. 4-9</
 <h2 id="sec-conclusions">5. Conclusions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This gargantuan stress indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.</p>
+<p>The gargantuan stress seen in the chamber (\(1412000.0~MPa\)) indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.</p>
 </div>
 </div>
 </div>
@@ -747,6 +789,23 @@ The location of this stress is depicted in <a href="#fig-fea_chamber">Fig. 4-9</
 </div>
 <div class="paragraph">
 <p><a id="OverviewMaterialsStainless"></a>[6] “Overview of Materials for Stainless Steel.” <a href="https://www.matweb.com/search/datasheet_print.aspx?matguid=71396e57ff5940b791ece120e4d563e0" class="bare">https://www.matweb.com/search/datasheet_print.aspx?matguid=71396e57ff5940b791ece120e4d563e0</a>.</p>
+</div>
+<div class="paragraph">
+<p><a id="jovicevic-klugComparativeStudyConventional2020"></a>[7] P. Jovičević-Klug and B. Podgornik, “Comparative Study of Conventional and Deep Cryogenic Treatment of AISI M3:2 (EN 1.3395) High-Speed Steel,” <em>Journal of Materials Research and Technology</em>, vol. 9, pp. 13118–13127, Sep. 2020, doi: 10.1016/j.jmrt.2020.09.071.</p>
+</div>
+<div class="paragraph">
+<p><a id="okazakiCorrosionFatigueProperties2002"></a>[8] Y. Okazaki and E. Gotoh, “Corrosion Fatigue Properties of Metallic Biomaterials in Eagle’s Medium,” <em>Materials Transactions - MATER TRANS</em>, vol. 43, pp. 2949–2955, Dec. 2002, doi: 10.2320/matertrans.43.2949.</p>
+</div>
+<div class="paragraph">
+<p><a id="novyGigacycleFatigueEndurance2013"></a>[9] F. Nový, V. Zatkalíková, O. Bokůvka, and K. Miková, “Gigacycle Fatigue Endurance of Marine Grade Stainless Steels with Corrosion Pits,” <em>Per. Pol. Transp. Eng.</em>, vol. 41, no. 2, p. 99, 2013, doi: 10.3311/PPtr.7109.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="SAEAISI1023G10230"></a>[10] “SAE-AISI 1023 (G10230) Carbon Steel </dt>
+<dd>
+<p>MakeItFrom.Com.” <a href="https://www.makeitfrom.com/material-properties/SAE-AISI-1023-G10230-Carbon-Steel" class="bare">https://www.makeitfrom.com/material-properties/SAE-AISI-1023-G10230-Carbon-Steel</a>.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>

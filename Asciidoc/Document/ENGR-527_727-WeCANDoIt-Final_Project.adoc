@@ -260,14 +260,18 @@ image::mesh_refinement_shaft.png[caption="Figure {secs}-{counter:figs}. ", refte
 .bar
 image::fea_mesh.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
-To further demonstrate the importance of performing a mesh refinement study, examine xref:fig-fea_mesh_refinement-contact_line[].
-Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in xref:fig-fea-cam[]), the stress normal to the axis of the shaft was observed to vary radially.
+To further demonstrate the importance of performing a mesh refinement study, examine xref:fig-fea-mesh_refinement-contact_line[].
+Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in xref:fig-fea-cam-normal[]), the stress normal to the axis of the shaft was observed to vary radially.
 The stem:[x]-axis of this plot is in the domain stem:[[0, \pi\]] because the cam requires only stem:[180^{\circ}] rotation to crush the can.
 The stresses are in the axial direction of the shaft and have a positive sense toward where the handle connects to the shaft.
 
-[#fig-fea_mesh_refinement-contact_line]
+[#fig-fea-mesh_refinement-contact_line]
 .Radial distribution of normal stress in the shaft axial direction at the contacting line between the crushing face of the cam and the top of the can for various mesh element sizes.
 image::mesh_refinement_contact_line.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+[#fig-fea-cam-normal]
+.The maximum normal stress in the shaft axial direction of stem:[\sim 7~MPa] (xref:fig-fea-mesh_refinement-contact_line[]) occurs at the rightmost extreme of the contact line as shown.
+image::fea_cam.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 
 ==== Key Components
@@ -287,43 +291,73 @@ The maximum shear stress in the shaft of stem:[${tau_max_shaft}~MPa] yields a fa
 Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${tau_max_pred}~MPa]) by stem:[${engr(perc_from_pred_shaft)}\%]
 
 [#fig-fea-shaft]
-.A maximum shear stress of stem:[9.171~MPa] may be seen at the shaft surface between the cam and bearing.
+.A maximum shear stress of stem:[${tau_max_shaft}~MPa] may be seen at the shaft surface between the cam and bearing.
 image::fea_shaft.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 ===== Handle
 <%!
     yield_strength_1023 = 282685049/1e6 # MPa
-    bending_max_handle = 37 # MPa
+    bending_max_handle = 34 # MPa
     FOS_handle = yield_strength_1023/bending_max_handle
     perc_from_pred_handle = np.abs(normal_max_pred - bending_max_handle)/np.average([normal_max_pred, bending_max_handle])*100 # %
 %>
-*SolidWorks* lists the yield strength of 1023 carbon steel to be stem:[${shear_strength_1023}~MPa].
-The maximum bending stress in the handle of stem:[${bending_max_handle}~MPa] yields a factor of safety of stem:[${engr(FOS_handle)}\].
+*SolidWorks* lists the yield strength of 1023 carbon steel to be stem:[${engr(yield_strength_1023)}~MPa].
+The maximum bending stress in the handle of stem:[${bending_max_handle}~MPa] yields a factor of safety of stem:[${engr(FOS_handle)}].
 Therefore, selection of this stem:[11~in]handle to fit the hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${normal_max_pred}~MPa]) by stem:[${engr(perc_from_pred_handle)}\%].
+This large disparity is likely due to how the average reaction force from the can acts on the crushing face of the cam because of the complex surface geometry which cannot be so simplified as a simple torque for hand calculations.
 
 [#fig-fea_handle]
-.A maximum bending stress of stem:[37~MPa] occurs at the point in the arm of the handle close to the shaft.
+.A maximum bending stress of stem:[${bending_max_handle}~MPa] occurs at the point in the arm of the handle close to the shaft.
 image::fea_handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 ===== Cam
-[#fig-fea-cam]
-.The maximum normal stress in the shaft axial direction of stem:[\sim 7~MPa] (xref:fig-fea_mesh_refinement-contact_line[]) occurs at the rightmost extreme of the contact line as shown.
-image::fea_cam.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-
-===== Chamber
 <%!
     yield_strength_AISI316 = 172.4 # MPa
     yield_strength_CARR = 207 # MPa
+    stress_max_cam = 71.2 # MPa
+    FOS_cam = np.array([yield_strength_AISI316, yield_strength_CARR])//stress_max_cam
+%>
+Although, *SolidWorks* does not list all the material properties for the selected material for the cam, the maximum stress in the cam (based on its geometry distributing stresses) is approximately stem:[${stress_max_cam}~MPa] and can be seen in xref:fig-fea-cam-max[].
+This appears to occur in tension, so if the yield strength were assumed to be close to that for AISI 316, then the yield strength could be as stem:[${yield_strength_AISI316}~MPa] (as listed in *SolidWorks*) or stem:[${yield_strength_CARR}~MPa] (as listed in McMaster-Carr cite:[mcmaster-carrCorrosionResistant316316L2021]).
+This would result in a factor of safety in the range of stem:[[${engr(FOS_cam[0])}, ${engr(FOS_cam[1])}\]].
+
+[#fig-fea-cam-max]
+.Maximum stress of stem:[${stress_max_cam}~MPa] in the geometry of the cam.
+image::fea-cam-max_220429_191536_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+===== Chamber
+<%!
     stress_max_chamber = 1412 # MPa
     FOS_chamber = np.array([yield_strength_AISI316, yield_strength_CARR])/stress_max_chamber
 %>
-The yield strength of AISI 316 stainless steel is listed in *SolidWorks* as stem:[${yield_strength_AISI316}~MPa]; however, McMaster-Carr lists stem:[${yield_strength_CARR}~MPa].
 The maximum stress in the chamber of stem:[${stress_max_chamber}~MPa] yields a factor of safety in the range of stem:[[${engr(FOS_chamber[0])}, ${engr(FOS_chamber[1])}\]].
 The location of this stress is depicted in xref:fig-fea_chamber[].
 
 [#fig-fea_chamber]
 .The greatest stress seen in the chamber housing was stem:[${stress_max_chamber*1e3}~GPa] and occurred at the flange that must react to the can being crushed by the rotating cam.
 image::fea_chamber.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+
+==== Fatigue
+This design was proposed to allow for continuous crushing of aluminum cans whether by human effort or electro-mechanically actuating the the cam.
+Normally, such designs, which are expected to withstand many cycles during a hopefully long service life, would require a fatigue analysis.
+As the authors were pressed for time to complete a fatigue simulation in some FEA software, literature values seem to indicate that fatigue may be a non-issue for the proposed design.
+
+Of the metals used throughout this analysis, the fatigue strengths of A2 tool steel (xref:fig-fea-fatigue-A2[]), a cast stainless steel (xref:fig-fea-fatigue-Cast[]), AISI 316 (xref:fig-fea-fatigue-AISI316[]), and 1023 carbon steel were found to be stem:[\sim 265~MPa], stem:[\sim 400~MPa], stem:[\sim 250~MPa], and stem:[\sim 225~MPa], respectively cite:[jovicevic-klugComparativeStudyConventional2020, okazakiCorrosionFatigueProperties2002, novyGigacycleFatigueEndurance2013, SAEAISI1023G10230].
+The stresses seen in components of these metals do not come close to some of these fatigue strengths: stem:[\sim 15.81~MPa] for the A2 tool steel inner ring of the bearings; and, stem:[${tau_max_shaft}~MPa] shear at the AISI 316 shaft and stem:[${bending_max_handle}~MPa] in the 1023 carbon steel handle.
+The exception to this observation is for those stresses seen in the chamber: the stem:[${stress_max_chamber*1e3}~MPa] from FEA is much greater than stem:[\sim 250~MPa] if assumed to be of similar grade steel as AISI 316.
+
+[#fig-fea-fatigue-A2]
+.Fatigue strength of A2 tool steel stem:[ = \sim 265~MPa]. Adapted from cite:[jovicevic-klugComparativeStudyConventional2020].
+image::klug_fig5.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+[#fig-fea-fatigue-Cast]
+.Fatigue strength of one cast stainless steel (stem:[CoCrMo]) stem:[ = \sim 400~MPa]. Adapted from cite:[okazakiCorrosionFatigueProperties2002].
+image::okazaki_fig7.pbm[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+[#fig-fea-fatigue-AISI316]
+.Fatigue strength of AISI 316 steel stem:[ = \sim 250~MPa]. Adapted from cite:[novyGigacycleFatigueEndurance2013].
+image::novy_fig4.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
 
 
 
@@ -333,8 +367,7 @@ image::fea_chamber.png[caption=<span class="floatnumber">Figure {secs}-{counter:
 :!figs:
 :!tabs:
 
-// speaking on the chamber
-This gargantuan stress indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.
+The gargantuan stress seen in the chamber (stem:[${stress_max_chamber*1e3}~MPa]) indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.
 
 
 
