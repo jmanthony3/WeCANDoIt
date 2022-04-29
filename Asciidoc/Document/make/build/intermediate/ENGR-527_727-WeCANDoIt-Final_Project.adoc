@@ -1,242 +1,355 @@
-// document metadata
-= Final Project
-Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty.edu>
-:affiliation: PhD Students
-:document_version: 1.0
-:revdate: April 27, 2022
-// :description: 
-:keywords: foo, bar
-:imagesdir: ./ENGR-527_727-WeCANDoIt-Final_Project
-:bibtex-file: ENGR-527_727-WeCANDoIt-Final_Project.bib
-:toc: auto
-:xrefstyle: short
-// :sectnums: |,all|
-:chapter-refsig: Chap.
-:section-refsig: Sec.
-:stem: latexmath
-:eqnums: AMS
-:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
-// :stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
-:stylesheet: asme.css
-:noheader:
-:nofooter:
-:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
-// :docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
-:docinfo: private
-:front-matter: any
-:!last-update-label:
-
-// example variable
-// :fn-1: footnote:[]
-
-// Python modules
-
-// end document metadata
-
-
-
-
-
-// begin document
-[abstract]
-.Abstract
-As the consumption of sugary, carbonated drinks has increased in recent years, an overwhelming number of aluminum cans have entered waste disposal facilities.
-To reduce the spatial requirement of the individual cans, we propose a rotationally driven high-throughput can crushing device that operates either via human or machine power to easily deform cans to at least 20% of the original volume.
-By utilizing a varying thickness wheel, the rotation of the wheel functions as a cam to compress the can against the wall of the device to less than 20% of the volume.
-The shaft is constructed from AISI 316 while the crushing wheel is cast stainless steel.
-A finite element study was conducted to verify that the stresses experienced in the design did not surpass the yield stresses of the components.
-The proposed device solves the issue of crushing cans and allows for automatic reloading to allow for continuous operation.
-
-*Keywords:* _{keywords}_
-
-
-
-[#sec-nomenclature]
-== Nomenclature
-:!subs:
-:!figs:
-:!tabs:
-
-[stem#eq-nomenclature, reftext="Eq. {secs}-{counter:eqs}"]
-++++
-\begin{align*}
-    \tau &= \text{shear stress} \\    \theta &= \text{angular displacement} \\    a &= \text{height of the hexagonal cross-section} \\    b & = \text{base of rectangular cross-section} \\    h &= \text{height of rectangular cross-section} \\    F &= \text{force applied at the end of the handle} \\    M &= \text{resultant moment from the force applied to the handle} \\    T &= \text{torque applied to the shaft} \\    y &= \text{distance from neutral axis for bending stress} \\    G &= \text{shear modulus} \\    L &= \text{handle length}
-\end{align*}
-++++
-
-
-
-// necessary to move to after `Nomenclature` to avoid section numbering
-:sectnums: |,all|
-
-[#sec-intro, {counter:secs}]
-== Introduction
-:!subs:
-:!figs:
-:!tabs:
-
-As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced.
-Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging cite:[epa] (PER YEAR??).
-To improve the ability to transport the cans to either a recycling facility or a landfill, a reduction of volume is necessary to decrease the required space and increase the ability to transport more cans in a single delivery.
-Can crushing mechanisms are typically either human-powered or complex electro-mechanical machines.
-The human aspect of the design encourages people to be engaged in the recycling process and be conscious of their choices.
-However, creating an electrically driven device automates process and provides capability for high throughput crushing.
-
-In the design of the device, an survey of similar can crushing devices was performed to understand the required features for the desired device.
-Next, the design was formulated and components were selected from common part providers or were designed to be easily fabricated.
-To ensure the feasability of the design and materials selection, an analytical analysis of two key points was conducted along with a Finite Element Analysis (FEA) of the entire system at the maximum crushing force of the can.
-Lastly, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infite life design. 
-
-
-
-[#sec-development, {counter:secs}]
-== Development of Engineering Specifications
-:!subs:
-:!figs:
-:!tabs:
-
-To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength.
-First, the average pulling force for a human was determined to be stem:[20~\text{lb}_f] which is consistent with NASA standards cite:[christensenman].
-In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts.
-In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr.
-
-To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in xref:fig-can_plot[].
-The avereage maximum crushing force was found to be approximately stem:[1.3~kN] to reduce the can to stem:[20\%] of the original volume.
-For the dimensions of an aluminum beverage can, the can was considered to have an original height of stem:[157~mm] and to achieve stem:[80\%] reduction in volume, the can would need to be deformed to a thickness of stem:[31.4~mm].
-The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests.
-Furthermore, from the project instructions, the final design was required to have the ability to be either mechanically or electrically driven.
-Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed.
-The metric for the human force and crushing force are determined via mechanical analysis.
-For the material selection, the commercially listed for the components will be used in the design.
-
-[#fig-can_plot]
-.Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted. 
-image::./compression_results.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}",role=text-center]
-
-
-
-[#sec-synthesis, {counter:secs}]
-== Sythesis of the Design
-:!subs:
-:!figs:
-:!tabs:
-
-In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered.
-While the common lever-based design (xref:fig-manual_device[]) allows for a can to be easily crushed, the challenge arises in creating an automated and high-throughput can crushing device.
-The common industrial devices serve to shred rather than compress the aluminum cans for use in recycling facilities.
-By investigating Do-It-Yourself (DIY) designs, a common method for automating the process is to create a crank-slider mechanism to compress the can.
-However, the number of moving parts in the design creates a higher likelihood of component failure if the device is operated for long periods of time.
-
-The design of the proposed device functions on the use of a "cam" with varying thickness to compress the aluminum can against the wall of the device.
-The thickness of the cam varies angularly allowing for a gradual crushing of the can.
-Once the can has been reduce to stem:[20\%] of the original volume, the can exits the device via a slot in the bottom of the housing.
-As the wheel completes a revolution, the opening for a can reaches the can entry location and allows the can to drop into the crushing area.
-The cam is suggested to be made from cast stainless steel.
-
-The shaft of the cam is hexagonal and purchased from McMaster-Carr and is made from AISI 316 cite:[mcmaster-carrCorrosionResistant316316L2021].
-In the current iteration, a handle purchased from McMaster-Carr cite:[mcmaster-carrCrankHandleMachinable2021] is attached to the shaft and a human is expected to provide the required rotational input to the device.
-However, a coupler could be used to attach the shaft to a motor to improve the rate of compression for the cans.
-The device is shown in xref:fig-design[].
-
-[#fig-design]
-.Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber.
-image::./design.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-
-[#fig-manual_device]
-.Example of a common design for manual can crushing devices.
-image::./manual_device.jpg[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-
-
-
-[#sec-design, {counter:secs}]
-== Deisgn Analysis and Optimization
-:!subs:
-:!figs:
-:!tabs:
-
-For analyzing the design of the can crushing mechanism, the analysis was broken down into two type: analytical and FEA.
-The analytical work focused on two points of interested: a point on the handle, and a point on the cross-section of the shaft. Due to the complex geometry of the cam, a FEA was carried out on the part assuming the maximum possible load applied by a human. 
-
-
-[#sec-design-analytical, {counter:subs}]
-=== Analytical Methods
-
-==== Shaft Cross-Section
-[#fig-hex_cross_section]
-.Diagram for the hexagonal shaft cross-section with the applied torque and key dimensions highlighted. 
-image::./shaft_cross_section.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-
-From Table 6.2 in cite:[uguralAdvancedMechanicsMaterials2019], the equations for the maximum shear stress, stem:[\tau_A], and angular deflection, stem:[\theta], for a hexagonal cross-section.
-The free body diagram for the torque applied to the shaft is shown in xref:fig-hex_cross_section[].
-To calculate the shear stress and angular deflection, the equations for shear stress and deflection from the textbook cite:[uguralAdvancedMechanicsMaterials2019]:
-
-[stem#eq-hex-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
-++++
-\begin{align}
-    \tau_A = \frac{5.7T}{a^{3}}\    \theta = \frac{8.8T}{a^{4}G}L
-\end{align}
-++++
-where stem:[T] is the applied torque, stem:[a] is the height of the hexagon, and stem:[G] is the modulus of rigidity.
-From the geometry of the shaft, stem:[a = 1~in].
-For AISI 316, the shear modulus, stem:[G = 78~GPa].
-For an applied torque of stem:[220~\text{lb}_f\cdot\text{in}], the maximum shear stress is predicted to be stem:[8.646~MPa] which closely matches the FEA results.
-Furthermore, the maximum predicted deflection is 2.05 milliradians.
-The delfection of the rod predicted via this equation is not comparable to the FEA results since the effects of the cam prevent some of the deflection that would be experienced by the shaft.
-
-==== Handle
-[#fig-handle_fbd]
-.FBD for the handle to determine the maximum bending stress at the connection.
-// image::./handle.png[width = 20, caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-image::./handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-
-The handle of the mechanism is subject to a moment produced by the force applied to the handle(see xref:fig-handle_fbd[]).
-Since the cross-section of the bar is rectangular, the standard equation for bending is applied.
-At the end of the handle, a force of stem:[20~\text{lb}_f], which is the human strength found from NASA cite:[christensenman], is applied.
-The handle has a length, stem:[L = 11~in] with a cross-sectional area of stem:[0.75~inches~\times~0.6~in].
-Using the equation for bending stress at point stem:[A] on the cross-section:
-
-[stem#eq-rect-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
-++++
-\begin{equation}
-\sigma_A = \frac{M\ y}{I}
-\end{equation}
-++++
-where stem:[M = 20~\text{lb}_f*10.125~\text{in} = 202.5~\text{lb}_f\cdot\text{in}], stem:[y = 0.375~\text{in}], and stem:[I = \frac{1}{12}(0.6~\text{in})(0.75~\text{in})^{3}].
-This gives a maximum normal stress of stem:[24.8~MPa].
-Once again, this closely matches the results determined in the FEA analysis near the point of interest.
-
-==== Conclusions
-Within the brief analytical work conducted, both the shear stress in the shaft and the maximum normal stress are both well below the limits of the material.
-For the cam, an FEA approach is employed due to the complex geometry of the contact surface with the can.
-The checks provided by the analytical work confirm that the FEA results are close to the predicted values.
-
-
-[#sec-design-fea, {counter:subs}]
-=== Finite Element Analysis (FEA)
-
-
-
-[#sec-conclusions, {counter:secs}]
-== Conclusions
-:!subs:
-:!figs:
-:!tabs:
-
-
-
-// [appendix#sec-appendix-Figures]
-// == Figures
-
-
-
-[bibliography]
-== References
-bibliography::[]
-// end document
-
-
-
-
-
-// that's all folks
+// document metadata
+= Final Project
+Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty.edu>
+:affiliation: PhD Students
+:document_version: 1.0
+:revdate: April 27, 2022
+// :description: 
+:keywords: foo, bar
+:imagesdir: ./ENGR-527_727-WeCANDoIt-Final_Project
+:bibtex-file: ENGR-527_727-WeCANDoIt-Final_Project.bib
+:toc: auto
+:xrefstyle: short
+// :sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+:stylesdir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+// :stylesdir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+:stylesheet: asme.css
+:noheader:
+:nofooter:
+:docinfodir: C:/Users/jmanthony1/Documents/GitHub/WeCANDoIt/Asciidoc/Document/
+// :docinfodir: C:/Users/cfarmer6/Documents/GitHub/WeCANDoIt/Asciidoc/Document
+:docinfo: private
+:front-matter: any
+:!last-update-label:
 
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+<%!
+    from engineering_notation import EngNumber as engr
+    import numpy as np
+%>
+// end document metadata
+
+
+
+
+
+// begin document
+[abstract]
+.Abstract
+As the consumption of sugary, carbonated drinks has increased in recent years, an overwhelming number of aluminum cans have entered waste disposal facilities.
+To reduce the spatial requirement of the individual cans, we propose a rotationally driven high-throughput can crushing device that operates either via human or machine power to easily deform cans to at least 20% of the original volume.
+By utilizing a varying thickness wheel, the rotation of the wheel functions as a cam to compress the can against the wall of the device to less than 20% of the volume.
+The shaft is constructed from AISI 316 while the crushing wheel is cast stainless steel.
+A finite element study was conducted to verify that the stresses experienced in the design did not surpass the yield stresses of the components.
+The proposed device solves the issue of crushing cans and allows for automatic reloading to allow for continuous operation.
+
+*Keywords:* _{keywords}_
+
+
+
+[#sec-nomenclature]
+== Nomenclature
+:!subs:
+:!figs:
+:!tabs:
+
+[stem#eq-nomenclature, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{align*}
+    \tau &= \text{shear stress} \\\
+    \theta &= \text{angular displacement} \\\
+    a &= \text{height of the hexagonal cross-section} \\\
+    b & = \text{base of rectangular cross-section} \\\
+    h &= \text{height of rectangular cross-section} \\\
+    F &= \text{force applied at the end of the handle} \\\
+    M &= \text{resultant moment from the force applied to the handle} \\\
+    T &= \text{torque applied to the shaft} \\\
+    y &= \text{distance from neutral axis for bending stress} \\\
+    G &= \text{shear modulus} \\\
+    L &= \text{handle length}
+\end{align*}
+++++
+
+
+
+// necessary to move to after `Nomenclature` to avoid section numbering
+:sectnums: |,all|
+
+[#sec-intro, {counter:secs}]
+== Introduction
+:!subs:
+:!figs:
+:!tabs:
+
+As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced.
+Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging cite:[epa] (PER YEAR??).
+To improve the ability to transport the cans to either a recycling facility or a landfill, a reduction of volume is necessary to decrease the required space and increase the ability to transport more cans in a single delivery.
+Can crushing mechanisms are typically either human-powered or complex electro-mechanical machines.
+The human aspect of the design encourages people to be engaged in the recycling process and be conscious of their choices.
+However, creating an electrically driven device automates process and provides capability for high throughput crushing.
+
+In the design of the device, an survey of similar can crushing devices was performed to understand the required features for the desired device.
+Next, the design was formulated and components were selected from common part providers or were designed to be easily fabricated.
+To ensure the feasability of the design and materials selection, an analytical analysis of two key points was conducted along with a Finite Element Analysis (FEA) of the entire system at the maximum crushing force of the can.
+Lastly, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infite life design. 
+
+
+
+[#sec-development, {counter:secs}]
+== Development of Engineering Specifications
+:!subs:
+:!figs:
+:!tabs:
+
+To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength.
+First, the average pulling force for a human was determined to be stem:[20~\text{lb}_f] which is consistent with NASA standards cite:[christensenman].
+In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts.
+In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr.
+
+To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in xref:fig-can_plot[].
+The average maximum crushing force was found to be approximately stem:[1.3~kN] to reduce the can to stem:[20\%] of the original volume.
+For the dimensions of an aluminum beverage can, the can was considered to have an original height of stem:[157~mm] and to achieve stem:[80\%] reduction in volume, the can would need to be deformed to a thickness of stem:[31.4~mm].
+The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests.
+Furthermore, from the project instructions, the final design was required to have the ability to be either mechanically or electrically driven.
+Additionally, the requirement of having the crushing mechanism automatically reload was added to improve the total throughput of the cans to be crushed.
+The metric for the human force and crushing force are determined via mechanical analysis.
+For the material selection, the commercially listed for the components will be used in the design.
+
+[#fig-can_plot]
+.Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted. 
+image::./compression_results.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}",role=text-center]
+
+
+
+[#sec-synthesis, {counter:secs}]
+== Synthesis of the Design
+:!subs:
+:!figs:
+:!tabs:
+
+In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered.
+While the common lever-based design (xref:fig-manual_device[]) allows for a can to be easily crushed, the challenge arises in creating an automated and high-throughput can crushing device.
+The common industrial devices serve to shred rather than compress the aluminum cans for use in recycling facilities.
+By investigating Do-It-Yourself (DIY) designs, a common method for automating the process is to create a crank-slider mechanism to compress the can.
+However, the number of moving parts in the design creates a higher likelihood of component failure if the device is operated for long periods of time.
+
+The design of the proposed device functions on the use of a "cam" with varying thickness to compress the aluminum can against the wall of the device.
+The thickness of the cam varies angularly allowing for a gradual crushing of the can.
+Once the can has been reduce to stem:[20\%] of the original volume, the can exits the device via a slot in the bottom of the housing.
+As the wheel completes a revolution, the opening for a can reaches the can entry location and allows the can to drop into the crushing area.
+The cam is suggested to be made from cast stainless steel.
+
+The shaft of the cam is hexagonal and purchased from McMaster-Carr and is made from AISI 316 cite:[mcmaster-carrCorrosionResistant316316L2021].
+In the current iteration, a handle purchased from McMaster-Carr cite:[mcmaster-carrCrankHandleMachinable2021] is attached to the shaft and a human is expected to provide the required rotational input to the device.
+However, a coupler could be used to attach the shaft to a motor to improve the rate of compression for the cans.
+The device is shown in xref:fig-design[].
+
+[#fig-design]
+.Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber.
+image::./design.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+[#fig-manual_device]
+.Example of a common design for manual can crushing devices.
+image::./manual_device.jpg[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+
+
+[#sec-design, {counter:secs}]
+== Design Analysis and Optimization
+:!subs:
+:!figs:
+:!tabs:
+
+For analyzing the design of the can crushing mechanism, the analysis was broken down into two type: analytical and FEA.
+The analytical work focused on two points of interested: a point on the handle, and a point on the cross-section of the shaft. Due to the complex geometry of the cam, a FEA was carried out on the part assuming the maximum possible load applied by a human. 
+
+
+[#sec-design-analytical, {counter:subs}]
+=== Analytical Methods
+
+==== Shaft Cross-Section
+<%!
+    tau_max_pred = 8.646 # MPa
+%>
+
+[#fig-hex_cross_section]
+.Diagram for the hexagonal shaft cross-section with the applied torque and key dimensions highlighted. 
+image::./shaft_cross_section.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+From Table 6.2 in cite:[uguralAdvancedMechanicsMaterials2019], the equations for the maximum shear stress, stem:[\tau_A], and angular deflection, stem:[\theta], for a hexagonal cross-section.
+The free body diagram for the torque applied to the shaft is shown in xref:fig-hex_cross_section[].
+To calculate the shear stress and angular deflection, the equations for shear stress and deflection from the textbook cite:[uguralAdvancedMechanicsMaterials2019]:
+
+[stem#eq-hex-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{align}
+    \tau_A = \frac{5.7T}{a^{3}}\\
+    \theta = \frac{8.8T}{a^{4}G}L
+\end{align}
+++++
+where stem:[T] is the applied torque, stem:[a] is the height of the hexagon, and stem:[G] is the modulus of rigidity.
+From the geometry of the shaft, stem:[a = 1~in].
+For AISI 316, the shear modulus, stem:[G = 78~GPa].
+For an applied torque of stem:[220~\text{lb}_f\cdot\text{in}], the maximum shear stress is predicted to be stem:[8.646~MPa] which closely matches the FEA results.
+Furthermore, the maximum predicted deflection is 2.05 milliradians.
+The deflection of the rod predicted via this equation is not comparable to the FEA results since the effects of the cam prevent some of the deflection that would be experienced by the shaft.
+
+==== Handle
+<%!
+    normal_max_pred = 24.8 # MPa
+%>
+
+[#fig-handle_fbd]
+.FBD for the handle to determine the maximum bending stress at the connection.
+// image::./handle.png[width = 20, caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+The handle of the mechanism is subject to a moment produced by the force applied to the handle(see xref:fig-handle_fbd[]).
+Since the cross-section of the bar is rectangular, the standard equation for bending is applied.
+At the end of the handle, a force of stem:[20~\text{lb}_f], which is the human strength found from NASA cite:[christensenman], is applied.
+The handle has a length, stem:[L = 11~in] with a cross-sectional area of stem:[0.75~inches~\times~0.6~in].
+Using the equation for bending stress at point stem:[A] on the cross-section:
+
+[stem#eq-rect-cross-section, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\sigma_A = \frac{M\ y}{I}
+\end{equation}
+++++
+where stem:[M = 20~\text{lb}_f*10.125~\text{in} = 202.5~\text{lb}_f\cdot\text{in}], stem:[y = 0.375~\text{in}], and stem:[I = \frac{1}{12}(0.6~\text{in})(0.75~\text{in})^{3}].
+This gives a maximum normal stress of stem:[24.8~MPa].
+Once again, this closely matches the results determined in the FEA analysis near the point of interest.
+
+==== Conclusions
+Within the brief analytical work conducted, both the shear stress in the shaft and the maximum normal stress are both well below the limits of the material.
+For the cam, an FEA approach is employed due to the complex geometry of the contact surface with the can.
+The checks provided by the analytical work confirm that the FEA results are close to the predicted values.
+
+
+[#sec-design-fea, {counter:subs}]
+=== Finite Element Analysis (FEA)
+Referring to xref:sec-design-analytical[], recall that the maximum shear stress calculated for the shaft was stem:[8.646~MPa], and the maximum stress due to bending in the handle was calculated to be stem:[24.8~MPa].
+Mechanical loads of stem:[202.5~\text{lb}_f\cdot\text{in}] and stem:[1.3~kN] were applied to the handle and the crushing face of the cam, respectively.
+The input torque causes the shaft to rotate which, in turn, forces the can to be crushed by the reduction of available space from the cam.
+If the cam withstands the average reacting force from the can (stem:[1.3~kN]), then the cam should also withstand every prerequisite reaction force (as seen in the force-displacement curve xref:fig-can_plot[]).
+Finite Element Analyses were carried out in *SolidWorks 2016-17* to verify these analytical calculations for the maximum stresses seen in the shaft and handle.
+A mesh refinement study was also performed to validate the FEA results.
+
+==== Mesh Refinement
+To determine the appropriate mesh element size and the sufficient number of elements needed for calculations, the mesh element size is gradually decreased such that the number of mesh elements increases.
+The more elements there exist in a study, the more precise the solution will be.
+However, the solution will take much longer to solve which may also become more inaccurate due to truncation errors.
+
+To demonstrate this concept clearly, xref:fig-fea-mesh_refinement-shaft[] plots the percent difference of the maximum shear stress seen in the shaft between some mesh and the next finer mesh.
+By increasing the number of mesh elements, the percent difference decreases from stem:[\sim 15\%] at stem:[14,479] elements down to stem:[\sim 1\%] at stem:[56,842] elements.
+However, there is a considerable spike back up stem:[\sim 20\%] at stem:[392,144] elements.
+For the selected mesh element size of stem:[0.2~in] and stem:[56,842] number of elements, this mesh may be seen in xref:fig-fea-mesh[].
+
+[#fig-fea-mesh_refinement-shaft]
+.Increasing the number of mesh elements revealed that the mesh element size of stem:[0.2~in] was sufficient and was therefore used for simulation studies reported for the remainder of this work.
+image::mesh_refinement_shaft.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-fea-mesh]
+.bar
+image::fea_mesh.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+To further demonstrate the importance of performing a mesh refinement study, examine xref:fig-fea_mesh_refinement-contact_line[].
+Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in xref:fig-fea-cam[]), the stress normal to the axis of the shaft was observed to vary radially.
+The stem:[x]-axis of this plot is in the domain stem:[[0, \pi\]] because the cam requires only stem:[180^{\circ}] rotation to crush the can.
+The stresses are in the axial direction of the shaft and have a positive sense toward where the handle connects to the shaft.
+
+[#fig-fea_mesh_refinement-contact_line]
+.Radial distribution of normal stress in the shaft axial direction at the contacting line between the crushing face of the cam and the top of the can for various mesh element sizes.
+image::mesh_refinement_contact_line.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+
+==== Key Components
+To corroborate those values calculated from xref:sec-design-analytical[], the effects from the applied input torque and average reaction force were examine in the shaft, handle, and contacting face of the cam.
+A single simulation was performed on the connected handle, shaft, inner ring of the bearings, and the cam.
+The chamber housing and the other parts of the bearings were excluded from this particular simulation because those components are not the focus of this design.
+
+===== Shaft
+<%!
+    shear_strength_AISI316 = np.array([74.5, 597]) # MPa
+    tau_max_shaft = 9.171 # MPa
+    FOS_shaft = shear_strength_AISI316/tau_max_shaft
+    perc_from_pred_shaft = np.abs(tau_max_pred - tau_max_shaft)/np.average([tau_max_pred, tau_max_shaft])*100 # %
+%>
+The shear strength of AISI 316 stainless steel is known to be in the range stem:[[${shear_strength_AISI316[0]}, ${shear_strength_AISI316[1]}\]~MPa] cite:[OverviewMaterialsStainless].
+The maximum shear stress in the shaft of stem:[${tau_max_shaft}~MPa] yields a factor of safety in the range of stem:[[${engr(FOS_shaft[0])}, ${engr(FOS_shaft[1])}\]].
+Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${tau_max_pred}~MPa]) by stem:[${engr(perc_from_pred_shaft)}\%]
+
+[#fig-fea-shaft]
+.A maximum shear stress of stem:[9.171~MPa] may be seen at the shaft surface between the cam and bearing.
+image::fea_shaft.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+===== Handle
+<%!
+    yield_strength_1023 = 282685049/1e6 # MPa
+    bending_max_handle = 37 # MPa
+    FOS_handle = yield_strength_1023/bending_max_handle
+    perc_from_pred_handle = np.abs(normal_max_pred - bending_max_handle)/np.average([normal_max_pred, bending_max_handle])*100 # %
+%>
+*SolidWorks* lists the yield strength of 1023 carbon steel to be stem:[${shear_strength_1023}~MPa].
+The maximum bending stress in the handle of stem:[${bending_max_handle}~MPa] yields a factor of safety of stem:[${engr(FOS_handle)}\].
+Therefore, selection of this stem:[11~in]handle to fit the hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${normal_max_pred}~MPa]) by stem:[${engr(perc_from_pred_handle)}\%].
+
+[#fig-fea_handle]
+.A maximum bending stress of stem:[37~MPa] occurs at the point in the arm of the handle close to the shaft.
+image::fea_handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+===== Cam
+[#fig-fea-cam]
+.The maximum normal stress in the shaft axial direction of stem:[\sim 7~MPa] (xref:fig-fea_mesh_refinement-contact_line[]) occurs at the rightmost extreme of the contact line as shown.
+image::fea_cam.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+===== Chamber
+<%!
+    yield_strength_AISI316 = 172.4 # MPa
+    yield_strength_CARR = 207 # MPa
+    stress_max_chamber = 1412 # MPa
+    FOS_chamber = np.array([yield_strength_AISI316, yield_strength_CARR])/stress_max_chamber
+%>
+The yield strength of AISI 316 stainless steel is listed in *SolidWorks* as stem:[${yield_strength_AISI316}~MPa]; however, McMaster-Carr lists stem:[${yield_strength_CARR}~MPa].
+The maximum stress in the chamber of stem:[${stress_max_chamber}~MPa] yields a factor of safety in the range of stem:[[${engr(FOS_chamber[0])}, ${engr(FOS_chamber[1])}\]].
+The location of this stress is depicted in xref:fig-fea_chamber[].
+
+[#fig-fea_chamber]
+.The greatest stress seen in the chamber housing was stem:[${stress_max_chamber*1e3}~GPa] and occurred at the flange that must react to the can being crushed by the rotating cam.
+image::fea_chamber.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+
+
+
+[#sec-conclusions, {counter:secs}]
+== Conclusions
+:!subs:
+:!figs:
+:!tabs:
+
+// speaking on the chamber
+This gargantuan stress indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.
+
+
+
+// [appendix#sec-appendix-Figures]
+// == Figures
+
+
+
+[bibliography]
+== References
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks

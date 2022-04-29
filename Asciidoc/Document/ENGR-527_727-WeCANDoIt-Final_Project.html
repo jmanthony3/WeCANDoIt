@@ -475,13 +475,13 @@ Lastly, a comparison of the FEA results with the fatigue life of the components 
 <div class="sectionbody">
 <div class="paragraph">
 <p>To develop the specifications for the design, several considerations were made to ensure that the design would be constructed effectively and within the limits of human strength.
-First, the average pulling force for a human was determined to be \(20~\text{lb}_f\) which is consistent with NASA standards [<a href="#christensenman">christensenman</a>].
+First, the average pulling force for a human was determined to be \(20~\text{lb}_f\) which is consistent with NASA standards [<a href="#christensenman">2</a>].
 In an effort to reduce the environmental impact of the design, the additional constraint of purchasing as many parts as possible without requiring custom fabricated parts.
 In the final design, less than half of the parts required were custom designed. The remainder were able to be purchased from McMaster-Carr.</p>
 </div>
 <div class="paragraph">
 <p>To determine the required crushing force for an aluminum beverage can, six uniaxial compression tests were conducted and the results are shown in <a href="#fig-can_plot">Fig. 2-1</a>.
-The avereage maximum crushing force was found to be approximately \(1.3~kN\) to reduce the can to \(20\%\) of the original volume.
+The average maximum crushing force was found to be approximately \(1.3~kN\) to reduce the can to \(20\%\) of the original volume.
 For the dimensions of an aluminum beverage can, the can was considered to have an original height of \(157~mm\) and to achieve \(80\%\) reduction in volume, the can would need to be deformed to a thickness of \(31.4~mm\).
 The dimensions of the can were determined via measurements taken from the beverage cans used in the compression tests.
 Furthermore, from the project instructions, the final design was required to have the ability to be either mechanically or electrically driven.
@@ -498,7 +498,7 @@ For the material selection, the commercially listed for the components will be u
 </div>
 </div>
 <div class="sect1">
-<h2 id="sec-synthesis">3. Sythesis of the Design</h2>
+<h2 id="sec-synthesis">3. Synthesis of the Design</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In creating the final design of the system, several commercially and custom fabricated can crushing solutions were considered.
@@ -535,7 +535,7 @@ The device is shown in <a href="#fig-design">Fig. 3-1</a>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="sec-design">4. Deisgn Analysis and Optimization</h2>
+<h2 id="sec-design">4. Design Analysis and Optimization</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For analyzing the design of the can crushing mechanism, the analysis was broken down into two type: analytical and FEA.
@@ -569,7 +569,7 @@ From the geometry of the shaft, \(a = 1~in\).
 For AISI 316, the shear modulus, \(G = 78~GPa\).
 For an applied torque of \(220~\text{lb}_f\cdot\text{in}\), the maximum shear stress is predicted to be \(8.646~MPa\) which closely matches the FEA results.
 Furthermore, the maximum predicted deflection is 2.05 milliradians.
-The delfection of the rod predicted via this equation is not comparable to the FEA results since the effects of the cam prevent some of the deflection that would be experienced by the shaft.</p>
+The deflection of the rod predicted via this equation is not comparable to the FEA results since the effects of the cam prevent some of the deflection that would be experienced by the shaft.</p>
 </div>
 </div>
 <div class="sect3">
@@ -583,7 +583,7 @@ The delfection of the rod predicted via this equation is not comparable to the F
 <div class="paragraph">
 <p>The handle of the mechanism is subject to a moment produced by the force applied to the handle(see <a href="#fig-handle_fbd">Fig. 4-2</a>).
 Since the cross-section of the bar is rectangular, the standard equation for bending is applied.
-At the end of the handle, a force of \(20~\text{lb}_f\), which is the human strength found from NASA [<a href="#christensenman">christensenman</a>], is applied.
+At the end of the handle, a force of \(20~\text{lb}_f\), which is the human strength found from NASA [<a href="#christensenman">2</a>], is applied.
 The handle has a length, \(L = 11~in\) with a cross-sectional area of \(0.75~inches~\times~0.6~in\).
 Using the equation for bending stress at point \(A\) on the cross-section:</p>
 </div>
@@ -611,14 +611,120 @@ The checks provided by the analytical work confirm that the FEA results are clos
 </div>
 <div class="sect2">
 <h3 id="sec-design-fea">4.2. Finite Element Analysis (FEA)</h3>
-
+<div class="paragraph">
+<p>Referring to <a href="#sec-design-analytical">Sec. 4.1</a>, recall that the maximum shear stress calculated for the shaft was \(8.646~MPa\), and the maximum stress due to bending in the handle was calculated to be \(24.8~MPa\).
+Mechanical loads of \(202.5~\text{lb}_f\cdot\text{in}\) and \(1.3~kN\) were applied to the handle and the crushing face of the cam, respectively.
+The input torque causes the shaft to rotate which, in turn, forces the can to be crushed by the reduction of available space from the cam.
+If the cam withstands the average reacting force from the can (\(1.3~kN\)), then the cam should also withstand every prerequisite reaction force (as seen in the force-displacement curve <a href="#fig-can_plot">Fig. 2-1</a>).
+Finite Element Analyses were carried out in <strong>SolidWorks 2016-17</strong> to verify these analytical calculations for the maximum stresses seen in the shaft and handle.
+A mesh refinement study was also performed to validate the FEA results.</p>
+</div>
+<div class="sect3">
+<h4 id="_mesh_refinement">4.2.1. Mesh Refinement</h4>
+<div class="paragraph">
+<p>To determine the appropriate mesh element size and the sufficient number of elements needed for calculations, the mesh element size is gradually decreased such that the number of mesh elements increases.
+The more elements there exist in a study, the more precise the solution will be.
+However, the solution will take much longer to solve which may also become more inaccurate due to truncation errors.</p>
+</div>
+<div class="paragraph">
+<p>To demonstrate this concept clearly, <a href="#fig-fea-mesh_refinement-shaft">Fig. 4-3</a> plots the percent difference of the maximum shear stress seen in the shaft between some mesh and the next finer mesh.
+By increasing the number of mesh elements, the percent difference decreases from \(\sim 15\%\) at \(14,479\) elements down to \(\sim 1\%\) at \(56,842\) elements.
+However, there is a considerable spike back up \(\sim 20\%\) at \(392,144\) elements.
+For the selected mesh element size of \(0.2~in\) and \(56,842\) number of elements, this mesh may be seen in <a href="#fig-fea-mesh">Fig. 4-4</a>.</p>
+</div>
+<div id="fig-fea-mesh_refinement-shaft" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_shaft.png" alt="mesh refinement shaft">
+</div>
+<div class="title">Figure 4-3. Increasing the number of mesh elements revealed that the mesh element size of \(0.2~in\) was sufficient and was therefore used for simulation studies reported for the remainder of this work.</div>
+</div>
+<div id="fig-fea-mesh" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_mesh.png" alt="fea mesh">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-4. </span>bar</div>
+</div>
+<div class="paragraph">
+<p>To further demonstrate the importance of performing a mesh refinement study, examine <a href="#fig-fea_mesh_refinement-contact_line">Fig. 4-5</a>.
+Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in <a href="#fig-fea-cam">Fig. 4-8</a>), the stress normal to the axis of the shaft was observed to vary radially.
+The \(x\)-axis of this plot is in the domain \([0, \pi]\) because the cam requires only \(180^{\circ}\) rotation to crush the can.
+The stresses are in the axial direction of the shaft and have a positive sense toward where the handle connects to the shaft.</p>
+</div>
+<div id="fig-fea_mesh_refinement-contact_line" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_contact_line.png" alt="mesh refinement contact line">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-5. </span>Radial distribution of normal stress in the shaft axial direction at the contacting line between the crushing face of the cam and the top of the can for various mesh element sizes.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_key_components">4.2.2. Key Components</h4>
+<div class="paragraph">
+<p>To corroborate those values calculated from <a href="#sec-design-analytical">Sec. 4.1</a>, the effects from the applied input torque and average reaction force were examine in the shaft, handle, and contacting face of the cam.
+A single simulation was performed on the connected handle, shaft, inner ring of the bearings, and the cam.
+The chamber housing and the other parts of the bearings were excluded from this particular simulation because those components are not the focus of this design.</p>
+</div>
+<div class="sect4">
+<h5 id="_shaft">Shaft</h5>
+<div class="paragraph">
+<p>The shear strength of AISI 316 stainless steel is known to be in the range \([74.5, 597.0]~MPa\) [<a href="#OverviewMaterialsStainless">6</a>].
+The maximum shear stress in the shaft of \(9.171~MPa\) yields a factor of safety in the range of \([8.12, 65.10]\).
+Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(8.646~MPa\)) by \(5.89\%\)</p>
+</div>
+<div id="fig-fea-shaft" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_shaft.png" alt="fea shaft">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-6. </span>A maximum shear stress of \(9.171~MPa\) may be seen at the shaft surface between the cam and bearing.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_handle_2">Handle</h5>
+<div class="paragraph">
+<p>The shear strength of AISI 316 stainless steel is known to be in the range \([74.5, 597.0]~MPa\) [<a href="#OverviewMaterialsStainless">6</a>].
+The maximum shear stress in the shaft of \(9.171~MPa\) yields a factor of safety in the range of \([8.12, 65.10]\).
+Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(8.646~MPa\)) by \(5.89\%\)</p>
+</div>
+<div id="fig-fea_handle" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_handle.png" alt="fea handle">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-7. </span>A maximum bending stress of \(37~MPa\) occurs at the point in the arm of the handle close to the shaft.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_cam">Cam</h5>
+<div id="fig-fea-cam" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_cam.png" alt="fea cam">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-8. </span>The maximum normal stress in the shaft axial direction of \(\sim 7~MPa\) (<a href="#fig-fea_mesh_refinement-contact_line">Fig. 4-5</a>) occurs at the rightmost extreme of the contact line as shown.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_chamber">Chamber</h5>
+<div class="paragraph">
+<p>The yield strength of AISI 316 stainless steel is listed in <strong>SolidWorks</strong> as \(172.4~MPa\); however, McMaster-Carr lists \(207~MPa\).
+The maximum stress in the chamber of \(1412~MPa\) yields a factor of safety in the range of \([122.10m, 146.60m]\).
+The location of this stress is depicted in <a href="#fig-fea_chamber">Fig. 4-9</a>.</p>
+</div>
+<div id="fig-fea_chamber" class="imageblock">
+<div class="content">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_chamber.png" alt="fea chamber">
+</div>
+<div class="title"><span class="floatnumber">Figure 4-9. </span>The greatest stress seen in the chamber housing was \(1412000.0~GPa\) and occurred at the flange that must react to the can being crushed by the rotating cam.</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="sec-conclusions">5. Conclusions</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>This gargantuan stress indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -628,7 +734,7 @@ The checks provided by the analytical work confirm that the FEA results are clos
 <p><a id="epa"></a>[1] Environmental Protection Agency.</p>
 </div>
 <div class="paragraph">
-<p><a id="christensenman"></a>[2] christensenman</p>
+<p><a id="christensenman"></a>[2] J. M. Christensen, J. W. McBarron, J. T. McConville, W. R. Pogue, R. C. Williges, and W. E. Woodson, “Man-Systems Integration Standards NASA-STD-3000, Volume II Revision B, July 1995.”</p>
 </div>
 <div class="paragraph">
 <p><a id="mcmaster-carrCorrosionResistant316316L2021"></a>[3] McMaster-Carr, “Corrosion-Resistant 316/316L Stainless Steel Hex Bar 1’ Wide.” 2021.</p>
@@ -638,6 +744,9 @@ The checks provided by the analytical work confirm that the FEA results are clos
 </div>
 <div class="paragraph">
 <p><a id="uguralAdvancedMechanicsMaterials2019"></a>[5] A. Ugural and S. Fenster, <em>Advanced Mechanics of Materials and Applied Elasticity (International Series in the Physical and Chemical Engineering Sciences)</em>, Sixth. Pearson, 2019.</p>
+</div>
+<div class="paragraph">
+<p><a id="OverviewMaterialsStainless"></a>[6] “Overview of Materials for Stainless Steel.” <a href="https://www.matweb.com/search/datasheet_print.aspx?matguid=71396e57ff5940b791ece120e4d563e0" class="bare">https://www.matweb.com/search/datasheet_print.aspx?matguid=71396e57ff5940b791ece120e4d563e0</a>.</p>
 </div>
 </div>
 </div>

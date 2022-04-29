@@ -280,11 +280,11 @@ The chamber housing and the other parts of the bearings were excluded from this 
     shear_strength_AISI316 = np.array([74.5, 597]) # MPa
     tau_max_shaft = 9.171 # MPa
     FOS_shaft = shear_strength_AISI316/tau_max_shaft
-    perc_from_pred = np.abs(tau_max_pred - tau_max_shaft)/np.average([tau_max_pred, tau_max_shaft])*100 # %
+    perc_from_pred_shaft = np.abs(tau_max_pred - tau_max_shaft)/np.average([tau_max_pred, tau_max_shaft])*100 # %
 %>
 The shear strength of AISI 316 stainless steel is known to be in the range stem:[[${shear_strength_AISI316[0]}, ${shear_strength_AISI316[1]}\]~MPa] cite:[OverviewMaterialsStainless].
 The maximum shear stress in the shaft of stem:[${tau_max_shaft}~MPa] yields a factor of safety in the range of stem:[[${engr(FOS_shaft[0])}, ${engr(FOS_shaft[1])}\]].
-Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[8.646~MPa]) by stem:[${engr(perc_from_pred)}\%]
+Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${tau_max_pred}~MPa]) by stem:[${engr(perc_from_pred_shaft)}\%]
 
 [#fig-fea-shaft]
 .A maximum shear stress of stem:[9.171~MPa] may be seen at the shaft surface between the cam and bearing.
@@ -292,14 +292,14 @@ image::fea_shaft.png[caption=<span class="floatnumber">Figure {secs}-{counter:fi
 
 ===== Handle
 <%!
-    shear_strength_AISI316 = np.array([74.5, 597]) # MPa
-    tau_max_shaft = 9.171 # MPa
-    FOS_shaft = shear_strength_AISI316/tau_max_shaft
-    perc_from_pred = np.abs(tau_max_pred - tau_max_shaft)/np.average([tau_max_pred, tau_max_shaft])*100 # %
+    yield_strength_1023 = 282685049/1e6 # MPa
+    bending_max_handle = 37 # MPa
+    FOS_handle = yield_strength_1023/bending_max_handle
+    perc_from_pred_handle = np.abs(normal_max_pred - bending_max_handle)/np.average([normal_max_pred, bending_max_handle])*100 # %
 %>
-The shear strength of AISI 316 stainless steel is known to be in the range stem:[[${shear_strength_AISI316[0]}, ${shear_strength_AISI316[1]}\]~MPa] cite:[OverviewMaterialsStainless].
-The maximum shear stress in the shaft of stem:[${tau_max_shaft}~MPa] yields a factor of safety in the range of stem:[[${engr(FOS_shaft[0])}, ${engr(FOS_shaft[1])}\]].
-Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[8.646~MPa]) by stem:[${engr(perc_from_pred)}\%].
+*SolidWorks* lists the yield strength of 1023 carbon steel to be stem:[${shear_strength_1023}~MPa].
+The maximum bending stress in the handle of stem:[${bending_max_handle}~MPa] yields a factor of safety of stem:[${engr(FOS_handle)}\].
+Therefore, selection of this stem:[11~in]handle to fit the hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${normal_max_pred}~MPa]) by stem:[${engr(perc_from_pred_handle)}\%].
 
 [#fig-fea_handle]
 .A maximum bending stress of stem:[37~MPa] occurs at the point in the arm of the handle close to the shaft.
