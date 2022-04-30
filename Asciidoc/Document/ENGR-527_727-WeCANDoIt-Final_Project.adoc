@@ -5,7 +5,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>; Carson W. Farmer <cfarmer6@liberty
 :document_version: 1.0
 :revdate: April 27, 2022
 // :description: 
-:keywords: foo, bar
+:keywords: Mechanics of Materials, Finite Element Analysis, High Throughput, Can Crushing
 :imagesdir: ./ENGR-527_727-WeCANDoIt-Final_Project
 :bibtex-file: ENGR-527_727-WeCANDoIt-Final_Project.bib
 :toc: auto
@@ -50,7 +50,7 @@ The shaft is constructed from AISI 316 while the crushing wheel is cast stainles
 A finite element study was conducted to verify that the stresses experienced in the design did not surpass the yield stresses of the components.
 The proposed device solves the issue of crushing cans and allows for automatic reloading to allow for continuous operation.
 
-*Keywords:* _{keywords}_
+Keywords: {keywords}
 
 
 
@@ -89,7 +89,7 @@ The proposed device solves the issue of crushing cans and allows for automatic r
 :!tabs:
 
 As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced.
-Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging cite:[epa] (PER YEAR??).
+Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging per year cite:[epa].
 To improve the ability to transport the cans to either a recycling facility or a landfill, a reduction of volume is necessary to decrease the required space and increase the ability to transport more cans in a single delivery.
 Can crushing mechanisms are typically either human-powered or complex electro-mechanical machines.
 The human aspect of the design encourages people to be engaged in the recycling process and be conscious of their choices.
@@ -97,8 +97,8 @@ However, creating an electrically driven device automates process and provides c
 
 In the design of the device, an survey of similar can crushing devices was performed to understand the required features for the desired device.
 Next, the design was formulated and components were selected from common part providers or were designed to be easily fabricated.
-To ensure the feasability of the design and materials selection, an analytical analysis of two key points was conducted along with a Finite Element Analysis (FEA) of the entire system at the maximum crushing force of the can.
-Lastly, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infite life design. 
+To ensure the feasibility of the design and materials selection, an analytical analysis of two key points was conducted along with a Finite Element Analysis (FEA) of the entire system at the maximum crushing force of the can.
+Lastly, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infinite life design.
 
 
 
@@ -124,7 +124,7 @@ For the material selection, the commercially listed for the components will be u
 
 [#fig-can_plot]
 .Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted. 
-image::./compression_results.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}",role=text-center]
+image::./compression_results.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 
 
@@ -153,11 +153,11 @@ The device is shown in xref:fig-design[].
 
 [#fig-design]
 .Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber.
-image::./design.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./design.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 [#fig-manual_device]
 .Example of a common design for manual can crushing devices.
-image::./manual_device.jpg[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./manual_device.jpg[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 
 
@@ -181,7 +181,7 @@ The analytical work focused on two points of interested: a point on the handle, 
 
 [#fig-hex_cross_section]
 .Diagram for the hexagonal shaft cross-section with the applied torque and key dimensions highlighted. 
-image::./shaft_cross_section.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./shaft_cross_section.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 From Table 6.2 in cite:[uguralAdvancedMechanicsMaterials2019], the equations for the maximum shear stress, stem:[\tau_A], and angular deflection, stem:[\theta], for a hexagonal cross-section.
 The free body diagram for the torque applied to the shaft is shown in xref:fig-hex_cross_section[].
@@ -209,7 +209,7 @@ The deflection of the rod predicted via this equation is not comparable to the F
 [#fig-handle_fbd]
 .FBD for the handle to determine the maximum bending stress at the connection.
 // image::./handle.png[width = 20, caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
-image::./handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::./handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 The handle of the mechanism is subject to a moment produced by the force applied to the handle(see xref:fig-handle_fbd[]).
 Since the cross-section of the bar is rectangular, the standard equation for bending is applied.
@@ -254,11 +254,11 @@ For the selected mesh element size of stem:[0.2~in] and stem:[56,842] number of 
 
 [#fig-fea-mesh_refinement-shaft]
 .Increasing the number of mesh elements revealed that the mesh element size of stem:[0.2~in] was sufficient and was therefore used for simulation studies reported for the remainder of this work.
-image::mesh_refinement_shaft.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+image::mesh_refinement_shaft.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 [#fig-fea-mesh]
-.bar
-image::fea_mesh.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+.View of mesh by stem:[0.2~in] mesh element size for simulated components: handle, shaft, inner ring of bearings, and cam.
+image::fea_mesh.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 To further demonstrate the importance of performing a mesh refinement study, examine xref:fig-fea-mesh_refinement-contact_line[].
 Measured at the contacting line between the crushing face of the cam and the top of the can (best visualized in xref:fig-fea-cam-normal[]), the stress normal to the axis of the shaft was observed to vary radially.
@@ -267,11 +267,11 @@ The stresses are in the axial direction of the shaft and have a positive sense t
 
 [#fig-fea-mesh_refinement-contact_line]
 .Radial distribution of normal stress in the shaft axial direction at the contacting line between the crushing face of the cam and the top of the can for various mesh element sizes.
-image::mesh_refinement_contact_line.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::mesh_refinement_contact_line.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 [#fig-fea-cam-normal]
 .The maximum normal stress in the shaft axial direction of stem:[\sim 7~MPa] (xref:fig-fea-mesh_refinement-contact_line[]) occurs at the rightmost extreme of the contact line as shown.
-image::fea_cam.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::fea_cam.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 
 ==== Key Components
@@ -288,11 +288,11 @@ The chamber housing and the other parts of the bearings were excluded from this 
 %>
 The shear strength of AISI 316 stainless steel is known to be in the range stem:[[${shear_strength_AISI316[0]}, ${shear_strength_AISI316[1]}\]~MPa] cite:[OverviewMaterialsStainless].
 The maximum shear stress in the shaft of stem:[${tau_max_shaft}~MPa] yields a factor of safety in the range of stem:[[${engr(FOS_shaft[0])}, ${engr(FOS_shaft[1])}\]].
-Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${tau_max_pred}~MPa]) by stem:[${engr(perc_from_pred_shaft)}\%]
+Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (stem:[${tau_max_pred}~MPa]) by stem:[${engr(perc_from_pred_shaft)}\%].
 
 [#fig-fea-shaft]
 .A maximum shear stress of stem:[${tau_max_shaft}~MPa] may be seen at the shaft surface between the cam and bearing.
-image::fea_shaft.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::fea_shaft.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 ===== Handle
 <%!
@@ -308,14 +308,14 @@ This large disparity is likely due to how the average reaction force from the ca
 
 [#fig-fea_handle]
 .A maximum bending stress of stem:[${bending_max_handle}~MPa] occurs at the point in the arm of the handle close to the shaft.
-image::fea_handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::fea_handle.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 ===== Cam
 <%!
     yield_strength_AISI316 = 172.4 # MPa
     yield_strength_CARR = 207 # MPa
     stress_max_cam = 71.2 # MPa
-    FOS_cam = np.array([yield_strength_AISI316, yield_strength_CARR])//stress_max_cam
+    FOS_cam = np.array([yield_strength_AISI316, yield_strength_CARR])/stress_max_cam
 %>
 Although, *SolidWorks* does not list all the material properties for the selected material for the cam, the maximum stress in the cam (based on its geometry distributing stresses) is approximately stem:[${stress_max_cam}~MPa] and can be seen in xref:fig-fea-cam-max[].
 This appears to occur in tension, so if the yield strength were assumed to be close to that for AISI 316, then the yield strength could be as stem:[${yield_strength_AISI316}~MPa] (as listed in *SolidWorks*) or stem:[${yield_strength_CARR}~MPa] (as listed in McMaster-Carr cite:[mcmaster-carrCorrosionResistant316316L2021]).
@@ -323,7 +323,7 @@ This would result in a factor of safety in the range of stem:[[${engr(FOS_cam[0]
 
 [#fig-fea-cam-max]
 .Maximum stress of stem:[${stress_max_cam}~MPa] in the geometry of the cam.
-image::fea-cam-max_220429_191536_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+image::fea-cam-max_220429_191536_EST.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 ===== Chamber
 <%!
@@ -335,7 +335,7 @@ The location of this stress is depicted in xref:fig-fea_chamber[].
 
 [#fig-fea_chamber]
 .The greatest stress seen in the chamber housing was stem:[${stress_max_chamber*1e3}~GPa] and occurred at the flange that must react to the can being crushed by the rotating cam.
-image::fea_chamber.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::fea_chamber.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 
 ==== Fatigue
@@ -349,15 +349,15 @@ The exception to this observation is for those stresses seen in the chamber: the
 
 [#fig-fea-fatigue-A2]
 .Fatigue strength of A2 tool steel stem:[ = \sim 265~MPa]. Adapted from cite:[jovicevic-klugComparativeStudyConventional2020].
-image::klug_fig5.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::klug_fig5.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 [#fig-fea-fatigue-Cast]
 .Fatigue strength of one cast stainless steel (stem:[CoCrMo]) stem:[ = \sim 400~MPa]. Adapted from cite:[okazakiCorrosionFatigueProperties2002].
-image::okazaki_fig7.pbm[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::okazaki_fig7.pbm[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 [#fig-fea-fatigue-AISI316]
 .Fatigue strength of AISI 316 steel stem:[ = \sim 250~MPa]. Adapted from cite:[novyGigacycleFatigueEndurance2013].
-image::novy_fig4.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}"]
+image::novy_fig4.png[caption=<span class="floatnumber">Figure {secs}-{counter:figs}. </span>, reftext="Fig. {secs}-{figs}", role=text-center, width=50%]
 
 
 
@@ -367,7 +367,14 @@ image::novy_fig4.png[caption=<span class="floatnumber">Figure {secs}-{counter:fi
 :!figs:
 :!tabs:
 
-The gargantuan stress seen in the chamber (stem:[${stress_max_chamber*1e3}~MPa]) indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.
+The proposed design (xref:fig-design[]) was intended for high throughput can crushing allowed by continuous action whether by human effort or electro-mechanical actuation.
+Most components (handle, shaft, and ball bearings) are readily available at McMaster-Carr, and the other components (chamber housing and cam) were designed such that a metal fabrication shop could bend sheet metal into the housing and the cam could be made of cast steel.
+The graded surface of the cam constrains a can up to stem:[16~oz] by reducing the available space for the can within the housing when the cam is rotated.
+A slot at the base of the can allows the can to drop out of the housing when sufficiently crushed.
+
+Maximum stresses seen in most of these components appear to be well within acceptable margins for yield, shear, and fatigue strengths which indicates that this novel can crushing design has some merit.
+However, the gargantuan stress seen in the chamber housing (stem:[${stress_max_chamber*1e3}~MPa]) indicates further work needed in designing a system that properly handle stress incurred from nominal operation.
+Future effort on this project must examine a more structurally integral design for the chamber housing and perform preliminary fatigue analyses to validate the claim that such low nominal stresses pose little threat to reduce fatigue life.
 
 
 

@@ -115,7 +115,8 @@ a {
     page-break-inside: avoid;
 } */
 img {
-    width: 70.7%;
+    /* width: 70.7%; */
+    width: 50%;
     align-self: center;
 }
 .imageblock > .title {

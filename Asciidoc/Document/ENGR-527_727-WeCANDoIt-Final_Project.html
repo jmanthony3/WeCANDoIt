@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="keywords" content="foo, bar">
+<meta name="keywords" content="Mechanics of Materials, Finite Element Analysis, High Throughput, Can Crushing">
 <meta name="author" content="Joby M. Anthony III &lt;jmanthony1@liberty.edu&gt;, Carson W. Farmer">
 <title>Final Project</title>
 <style>
@@ -126,7 +126,8 @@ a {
     page-break-inside: avoid;
 } */
 img {
-    width: 70.7%;
+    /* width: 70.7%; */
+    width: 50%;
     align-self: center;
 }
 .imageblock > .title {
@@ -368,7 +369,7 @@ MathJax = {
         // A4 pageheight: 842px for 72dpi, 1123px for 96dpi
         // letter pageheight: 791px for 72dpi, 1054px for 96dpi
         // var totalPages = Math.ceil(document.body.scrollHeight / 1054)/2 - 1;
-        var totalPages = 14;
+        var totalPages = 11;
         for (var i = 1; i <= totalPages; i++) {
             var pageNumberDiv = document.createElement("div");
             // var pageNumber = document.createTextNode("Page " + i + " of " + totalPages);
@@ -435,7 +436,7 @@ The proposed device solves the issue of crushing cans and allows for automatic r
 </blockquote>
 </div>
 <div class="paragraph">
-<p><strong>Keywords:</strong> <em>foo, bar</em></p>
+<p>Keywords: Mechanics of Materials, Finite Element Analysis, High Throughput, Can Crushing</p>
 </div>
 </div>
 </div>
@@ -456,7 +457,7 @@ The proposed device solves the issue of crushing cans and allows for automatic r
 <div class="sectionbody">
 <div class="paragraph">
 <p>As the consumption of soda continues to increase internationally, landfills are being overwhelmed by the number of empty cans produced.
-Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging [<a href="#epa">1</a>] (PER YEAR??).
+Current estimates by the EPA predict that 1.9 millions tons of aluminum are produced as beverage packaging per year [<a href="#epa">1</a>].
 To improve the ability to transport the cans to either a recycling facility or a landfill, a reduction of volume is necessary to decrease the required space and increase the ability to transport more cans in a single delivery.
 Can crushing mechanisms are typically either human-powered or complex electro-mechanical machines.
 The human aspect of the design encourages people to be engaged in the recycling process and be conscious of their choices.
@@ -465,8 +466,8 @@ However, creating an electrically driven device automates process and provides c
 <div class="paragraph">
 <p>In the design of the device, an survey of similar can crushing devices was performed to understand the required features for the desired device.
 Next, the design was formulated and components were selected from common part providers or were designed to be easily fabricated.
-To ensure the feasability of the design and materials selection, an analytical analysis of two key points was conducted along with a Finite Element Analysis (FEA) of the entire system at the maximum crushing force of the can.
-Lastly, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infite life design.</p>
+To ensure the feasibility of the design and materials selection, an analytical analysis of two key points was conducted along with a Finite Element Analysis (FEA) of the entire system at the maximum crushing force of the can.
+Lastly, a comparison of the FEA results with the fatigue life of the components ensures that the devices meets the requirements for an infinite life design.</p>
 </div>
 </div>
 </div>
@@ -491,7 +492,7 @@ For the material selection, the commercially listed for the components will be u
 </div>
 <div id="fig-can_plot" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/compression_results.png" alt="compression results">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/compression_results.png" alt="compression results" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 2-1. </span>Results from crushing six different aluminum soda cans with the regions of buckling and maximum force denoted.</div>
 </div>
@@ -520,15 +521,15 @@ In the current iteration, a handle purchased from McMaster-Carr [<a href="#mcmas
 However, a coupler could be used to attach the shaft to a motor to improve the rate of compression for the cans.
 The device is shown in <a href="#fig-design">Fig. 3-1</a>.</p>
 </div>
-<div id="fig-design" class="imageblock">
+<div id="fig-design" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/design.png" alt="design">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/design.png" alt="design" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 3-1. </span>Design of the can crushing device with a potion of the housing cut away to view internal crushing chamber.</div>
 </div>
-<div id="fig-manual_device" class="imageblock">
+<div id="fig-manual_device" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/manual_device.jpg" alt="manual device">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/manual_device.jpg" alt="manual device" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 3-2. </span>Example of a common design for manual can crushing devices.</div>
 </div>
@@ -545,9 +546,9 @@ The analytical work focused on two points of interested: a point on the handle, 
 <h3 id="sec-design-analytical">4.1. Analytical Methods</h3>
 <div class="sect3">
 <h4 id="_shaft_cross_section">4.1.1. Shaft Cross-Section</h4>
-<div id="fig-hex_cross_section" class="imageblock">
+<div id="fig-hex_cross_section" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/shaft_cross_section.png" alt="shaft cross section">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/shaft_cross_section.png" alt="shaft cross section" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-1. </span>Diagram for the hexagonal shaft cross-section with the applied torque and key dimensions highlighted.</div>
 </div>
@@ -574,9 +575,9 @@ The deflection of the rod predicted via this equation is not comparable to the F
 </div>
 <div class="sect3">
 <h4 id="_handle">4.1.2. Handle</h4>
-<div id="fig-handle_fbd" class="imageblock">
+<div id="fig-handle_fbd" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/handle.png" alt="handle">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/handle.png" alt="handle" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-2. </span>FBD for the handle to determine the maximum bending stress at the connection.</div>
 </div>
@@ -632,17 +633,17 @@ By increasing the number of mesh elements, the percent difference decreases from
 However, there is a considerable spike back up \(\sim 20\%\) at \(392,144\) elements.
 For the selected mesh element size of \(0.2~in\) and \(56,842\) number of elements, this mesh may be seen in <a href="#fig-fea-mesh">Fig. 4-4</a>.</p>
 </div>
-<div id="fig-fea-mesh_refinement-shaft" class="imageblock">
+<div id="fig-fea-mesh_refinement-shaft" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_shaft.png" alt="mesh refinement shaft">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_shaft.png" alt="mesh refinement shaft" width="50%">
 </div>
-<div class="title">Figure 4-3. Increasing the number of mesh elements revealed that the mesh element size of \(0.2~in\) was sufficient and was therefore used for simulation studies reported for the remainder of this work.</div>
+<div class="title"><span class="floatnumber">Figure 4-3. </span>Increasing the number of mesh elements revealed that the mesh element size of \(0.2~in\) was sufficient and was therefore used for simulation studies reported for the remainder of this work.</div>
 </div>
-<div id="fig-fea-mesh" class="imageblock">
+<div id="fig-fea-mesh" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_mesh.png" alt="fea mesh">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_mesh.png" alt="fea mesh" width="50%">
 </div>
-<div class="title"><span class="floatnumber">Figure 4-4. </span>bar</div>
+<div class="title"><span class="floatnumber">Figure 4-4. </span>View of mesh by \(0.2~in\) mesh element size for simulated components: handle, shaft, inner ring of bearings, and cam.</div>
 </div>
 <div class="paragraph">
 <p>To further demonstrate the importance of performing a mesh refinement study, examine <a href="#fig-fea-mesh_refinement-contact_line">Fig. 4-5</a>.
@@ -650,15 +651,15 @@ Measured at the contacting line between the crushing face of the cam and the top
 The \(x\)-axis of this plot is in the domain \([0, \pi]\) because the cam requires only \(180^{\circ}\) rotation to crush the can.
 The stresses are in the axial direction of the shaft and have a positive sense toward where the handle connects to the shaft.</p>
 </div>
-<div id="fig-fea-mesh_refinement-contact_line" class="imageblock">
+<div id="fig-fea-mesh_refinement-contact_line" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_contact_line.png" alt="mesh refinement contact line">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/mesh_refinement_contact_line.png" alt="mesh refinement contact line" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-5. </span>Radial distribution of normal stress in the shaft axial direction at the contacting line between the crushing face of the cam and the top of the can for various mesh element sizes.</div>
 </div>
-<div id="fig-fea-cam-normal" class="imageblock">
+<div id="fig-fea-cam-normal" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_cam.png" alt="fea cam">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_cam.png" alt="fea cam" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-6. </span>The maximum normal stress in the shaft axial direction of \(\sim 7~MPa\) (<a href="#fig-fea-mesh_refinement-contact_line">Fig. 4-5</a>) occurs at the rightmost extreme of the contact line as shown.</div>
 </div>
@@ -675,11 +676,11 @@ The chamber housing and the other parts of the bearings were excluded from this 
 <div class="paragraph">
 <p>The shear strength of AISI 316 stainless steel is known to be in the range \([74.5, 597.0]~MPa\) [<a href="#OverviewMaterialsStainless">6</a>].
 The maximum shear stress in the shaft of \(9.171~MPa\) yields a factor of safety in the range of \([8.12, 65.10]\).
-Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(8.646~MPa\)) by \(5.89\%\)</p>
+Therefore, selection of this hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(8.646~MPa\)) by \(5.89\%\).</p>
 </div>
-<div id="fig-fea-shaft" class="imageblock">
+<div id="fig-fea-shaft" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_shaft.png" alt="fea shaft">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_shaft.png" alt="fea shaft" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-7. </span>A maximum shear stress of \(9.171~MPa\) may be seen at the shaft surface between the cam and bearing.</div>
 </div>
@@ -692,9 +693,9 @@ The maximum bending stress in the handle of \(34~MPa\) yields a factor of safety
 Therefore, selection of this \(11~in\)handle to fit the hexagonal shaft was sufficient for this design and the results from the FEA study differed from the analytical calculation (\(24.8~MPa\)) by \(31.29\%\).
 This large disparity is likely due to how the average reaction force from the can acts on the crushing face of the cam because of the complex surface geometry which cannot be so simplified as a simple torque for hand calculations.</p>
 </div>
-<div id="fig-fea_handle" class="imageblock">
+<div id="fig-fea_handle" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_handle.png" alt="fea handle">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_handle.png" alt="fea handle" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-8. </span>A maximum bending stress of \(34~MPa\) occurs at the point in the arm of the handle close to the shaft.</div>
 </div>
@@ -704,13 +705,13 @@ This large disparity is likely due to how the average reaction force from the ca
 <div class="paragraph">
 <p>Although, <strong>SolidWorks</strong> does not list all the material properties for the selected material for the cam, the maximum stress in the cam (based on its geometry distributing stresses) is approximately \(71.2~MPa\) and can be seen in <a href="#fig-fea-cam-max">Fig. 4-9</a>.
 This appears to occur in tension, so if the yield strength were assumed to be close to that for AISI 316, then the yield strength could be as \(172.4~MPa\) (as listed in <strong>SolidWorks</strong>) or \(207~MPa\) (as listed in McMaster-Carr [<a href="#mcmaster-carrCorrosionResistant316316L2021">3</a>]).
-This would result in a factor of safety in the range of \([2, 2]\).</p>
+This would result in a factor of safety in the range of \([2.42, 2.91]\).</p>
 </div>
-<div id="fig-fea-cam-max" class="imageblock">
+<div id="fig-fea-cam-max" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea-cam-max_220429_191536_EST.png" alt="fea cam max 220429 191536 EST">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea-cam-max_220429_191536_EST.png" alt="fea cam max 220429 191536 EST" width="50%">
 </div>
-<div class="title">Figure 4-9. Maximum stress of \(71.2~MPa\) in the geometry of the cam.</div>
+<div class="title"><span class="floatnumber">Figure 4-9. </span>Maximum stress of \(71.2~MPa\) in the geometry of the cam.</div>
 </div>
 </div>
 <div class="sect4">
@@ -719,9 +720,9 @@ This would result in a factor of safety in the range of \([2, 2]\).</p>
 <p>The maximum stress in the chamber of \(1412~MPa\) yields a factor of safety in the range of \([122.10m, 146.60m]\).
 The location of this stress is depicted in <a href="#fig-fea_chamber">Fig. 4-10</a>.</p>
 </div>
-<div id="fig-fea_chamber" class="imageblock">
+<div id="fig-fea_chamber" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_chamber.png" alt="fea chamber">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/fea_chamber.png" alt="fea chamber" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-10. </span>The greatest stress seen in the chamber housing was \(1412000.0~GPa\) and occurred at the flange that must react to the can being crushed by the rotating cam.</div>
 </div>
@@ -739,21 +740,21 @@ As the authors were pressed for time to complete a fatigue simulation in some FE
 The stresses seen in components of these metals do not come close to some of these fatigue strengths: \(\sim 15.81~MPa\) for the A2 tool steel inner ring of the bearings; and, \(9.171~MPa\) shear at the AISI 316 shaft and \(34~MPa\) in the 1023 carbon steel handle.
 The exception to this observation is for those stresses seen in the chamber: the \(1412000.0~MPa\) from FEA is much greater than \(\sim 250~MPa\) if assumed to be of similar grade steel as AISI 316.</p>
 </div>
-<div id="fig-fea-fatigue-A2" class="imageblock">
+<div id="fig-fea-fatigue-A2" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/klug_fig5.png" alt="klug fig5">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/klug_fig5.png" alt="klug fig5" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-11. </span>Fatigue strength of A2 tool steel \( = \sim 265~MPa\). Adapted from [<a href="#jovicevic-klugComparativeStudyConventional2020">7</a>].</div>
 </div>
-<div id="fig-fea-fatigue-Cast" class="imageblock">
+<div id="fig-fea-fatigue-Cast" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/okazaki_fig7.pbm" alt="okazaki fig7">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/okazaki_fig7.pbm" alt="okazaki fig7" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-12. </span>Fatigue strength of one cast stainless steel (\(CoCrMo\)) \( = \sim 400~MPa\). Adapted from [<a href="#okazakiCorrosionFatigueProperties2002">8</a>].</div>
 </div>
-<div id="fig-fea-fatigue-AISI316" class="imageblock">
+<div id="fig-fea-fatigue-AISI316" class="imageblock text-center">
 <div class="content">
-<img src="./ENGR-527_727-WeCANDoIt-Final_Project/novy_fig4.png" alt="novy fig4">
+<img src="./ENGR-527_727-WeCANDoIt-Final_Project/novy_fig4.png" alt="novy fig4" width="50%">
 </div>
 <div class="title"><span class="floatnumber">Figure 4-13. </span>Fatigue strength of AISI 316 steel \( = \sim 250~MPa\). Adapted from [<a href="#novyGigacycleFatigueEndurance2013">9</a>].</div>
 </div>
@@ -765,7 +766,15 @@ The exception to this observation is for those stresses seen in the chamber: the
 <h2 id="sec-conclusions">5. Conclusions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The gargantuan stress seen in the chamber (\(1412000.0~MPa\)) indicates that further work is needed in the design of the chamber housing to properly handle stress incurred from nominal operation.</p>
+<p>The proposed design (<a href="#fig-design">Fig. 3-1</a>) was intended for high throughput can crushing allowed by continuous action whether by human effort or electro-mechanical actuation.
+Most components (handle, shaft, and ball bearings) are readily available at McMaster-Carr, and the other components (chamber housing and cam) were designed such that a metal fabrication shop could bend sheet metal into the housing and the cam could be made of cast steel.
+The graded surface of the cam constrains a can up to \(16~oz\) by reducing the available space for the can within the housing when the cam is rotated.
+A slot at the base of the can allows the can to drop out of the housing when sufficiently crushed.</p>
+</div>
+<div class="paragraph">
+<p>Maximum stresses seen in most of these components appear to be well within acceptable margins for yield, shear, and fatigue strengths which indicates that this novel can crushing design has some merit.
+However, the gargantuan stress seen in the chamber housing (\(1412000.0~MPa\)) indicates further work needed in designing a system that properly handle stress incurred from nominal operation.
+Future effort on this project must examine a more structurally integral design for the chamber housing and perform preliminary fatigue analyses to validate the claim that such low nominal stresses pose little threat to reduce fatigue life.</p>
 </div>
 </div>
 </div>
